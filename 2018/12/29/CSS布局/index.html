@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="CSS, Layout,">
 
 
 
@@ -79,13 +79,34 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="YjjTT">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="CSS布局盒模型(框模型)CSS有一些表现不用的框类型分别为box和line-box, 可以通过设置display属性来设定元素的框类型, 其中最常见的三种类型为block, inline, inline-block. display 是CSS中最重要的用于控制布局的属性, 决定了文档流的流动方向。每个元素都有一个默认的 display 值，这与元素的类型有关, 并且该属性的值是可以修改的。对于大">
+<meta name="keywords" content="CSS, Layout">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS布局">
+<meta property="og:url" content="http://yoursite.com/2018/12/29/CSS布局/index.html">
 <meta property="og:site_name" content="YjjTT">
+<meta property="og:description" content="CSS布局盒模型(框模型)CSS有一些表现不用的框类型分别为box和line-box, 可以通过设置display属性来设定元素的框类型, 其中最常见的三种类型为block, inline, inline-block. display 是CSS中最重要的用于控制布局的属性, 决定了文档流的流动方向。每个元素都有一个默认的 display 值，这与元素的类型有关, 并且该属性的值是可以修改的。对于大">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145caacf8c81?w=782&h=119&f=png&s=10836">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145caaf1df73?w=328&h=134&f=png&s=17845">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145cab12b040?w=308&h=97&f=png&s=9708">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145caba21d5f?w=778&h=148&f=png&s=10860">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145cab8ddcaf?w=1328&h=996&f=png&s=64942">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145cac4a32a6?w=431&h=182&f=png&s=16089">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145d41c7748e?w=1564&h=316&f=png&s=71248">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145d6b221be5?w=1558&h=344&f=png&s=71871">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145d6af9ba84?w=1564&h=336&f=png&s=123825">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145dc52f4884?w=1550&h=281&f=png&s=58469">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145dce83a837?w=1560&h=284&f=png&s=66001">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145e0eaa78fa?w=1564&h=435&f=png&s=85447">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145eb27f17d7?w=1567&h=344&f=png&s=98893">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145ece64164b?w=1568&h=345&f=png&s=86048">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145ef4945a53?w=1559&h=439&f=png&s=94899">
+<meta property="og:updated_time" content="2018-12-29T06:33:45.993Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YjjTT">
+<meta name="twitter:title" content="CSS布局">
+<meta name="twitter:description" content="CSS布局盒模型(框模型)CSS有一些表现不用的框类型分别为box和line-box, 可以通过设置display属性来设定元素的框类型, 其中最常见的三种类型为block, inline, inline-block. display 是CSS中最重要的用于控制布局的属性, 决定了文档流的流动方向。每个元素都有一个默认的 display 值，这与元素的类型有关, 并且该属性的值是可以修改的。对于大">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/12/18/167c145caacf8c81?w=782&h=119&f=png&s=10836">
 
 
 
@@ -115,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/29/CSS布局/">
 
 
 
 
 
-  <title>YjjTT</title>
+  <title>CSS布局 | YjjTT</title>
   
 
 
@@ -140,8 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,9 +234,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +266,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/29/CSS布局/" itemprop="url">CSS布局</a></h1>
+          <h1 class="post-title" itemprop="name headline">CSS布局</h1>
         
 
         <div class="post-meta">
@@ -298,9 +316,7 @@
       
 
       
-        
-          
-            <h3 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h3><h4 id="盒模型-框模型"><a href="#盒模型-框模型" class="headerlink" title="盒模型(框模型)"></a>盒模型(框模型)</h4><p>CSS有一些表现不用的框类型分别为box和line-box, 可以通过设置<code>display</code>属性来设定元素的框类型, 其中最常见的三种类型为<code>block</code>, <code>inline</code>, <code>inline-block</code>.</p>
+        <h3 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h3><h4 id="盒模型-框模型"><a href="#盒模型-框模型" class="headerlink" title="盒模型(框模型)"></a>盒模型(框模型)</h4><p>CSS有一些表现不用的框类型分别为box和line-box, 可以通过设置<code>display</code>属性来设定元素的框类型, 其中最常见的三种类型为<code>block</code>, <code>inline</code>, <code>inline-block</code>.</p>
 <p><code>display</code> 是CSS中最重要的用于控制布局的属性, 决定了文档流的流动方向。每个元素都有一个默认的 display 值，这与元素的类型有关, 并且该属性的值是可以修改的。对于大多数元素它们的默认值通常是 <code>block</code> 或 <code>inline</code> 。一个 block 元素通常被叫做块级元素。一个 inline 元素通常被叫做行内元素。</p>
 <hr>
 <p><strong>1. block box</strong></p>
@@ -550,8 +566,6 @@
 <li><code>position</code></li>
 </ol>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">25px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
     
@@ -566,294 +580,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/29/单行多行文字显示省略号/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiang Tao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YjjTT">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/29/单行多行文字显示省略号/" itemprop="url">单行多行文字显示省略号</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-29T14:31:11+08:00">
-                2018-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/CSS-Layout/" rel="tag"># CSS, Layout</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="单行文字省略号"><a href="#单行文字省略号" class="headerlink" title="单行文字省略号"></a>单行文字省略号</h3><p>直接上代码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">	....全是文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/24/167df6f80b36fe8b?w=806&amp;h=120&amp;f=png&amp;s=5804" alt=""></p>
-<h3 id="多行文字省略号"><a href="#多行文字省略号" class="headerlink" title="多行文字省略号"></a>多行文字省略号</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">	....全是文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    -webkit-line-clamp: 2; // 代表第几行显示省略号</span><br><span class="line">    <span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/24/167df6f80b2c5e67?w=808&amp;h=142&amp;f=png&amp;s=10125" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/排序算法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiang Tao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YjjTT">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/28/排序算法/" itemprop="url">排序算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-28T18:34:58+08:00">
-                2018-12-28
-              </time>
+              <a href="/2018/12/29/单行多行文字显示省略号/" rel="next" title="单行多行文字显示省略号">
+                <i class="fa fa-chevron-left"></i> 单行多行文字显示省略号
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="常见排序算法"><a href="#常见排序算法" class="headerlink" title="常见排序算法"></a>常见排序算法</h3><blockquote>
-<p>本文涉及的算法有: </p>
-<ul>
-<li>冒泡排序</li>
-<li>选择排序</li>
-<li>计数排序</li>
-</ul>
-</blockquote>
-<hr>
-<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><ul>
-<li>伪代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">语法定义: <span class="string">"&lt;-"</span> 赋值符号  a[<span class="number">0</span>]会转换为a[<span class="string">'0'</span>]</span><br><span class="line">a &lt;- &#123;</span><br><span class="line">    <span class="string">'0'</span>: <span class="number">6</span>,</span><br><span class="line">    <span class="string">'1'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'2'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'3'</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="string">'4'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'5'</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">'length'</span>: <span class="number">6</span></span><br><span class="line">&#125;</span><br><span class="line">// 当前循环次数</span><br><span class="line">n &lt;- <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> (n &lt; a[<span class="string">'length'</span>])</span><br><span class="line">	// 当前选中的数字下标 </span><br><span class="line">    index &lt;- <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> (index &lt; a[<span class="string">'length'</span>] - n)</span><br><span class="line">    	<span class="keyword">if</span> (a[index] &lt; a[index+<span class="number">1</span>])</span><br><span class="line">        	index &lt;- index+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        	c &lt;- a[index]</span><br><span class="line">            a[index] &lt;- a[index+<span class="number">1</span>]</span><br><span class="line">            a[index+<span class="number">1</span>] &lt;- c</span><br><span class="line">            index &lt;- index+<span class="number">1</span></span><br><span class="line">        end</span><br><span class="line">        n &lt;- n+<span class="number">1</span></span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line"><span class="keyword">print</span> a</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<ul>
-<li>流程图</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/27/167ef07fb32ac075?w=542&amp;h=938&amp;f=png&amp;s=45723" alt=""></p>
-<hr>
-<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><ul>
-<li>伪代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a &lt;- &#123;</span><br><span class="line">	<span class="string">'0'</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">'1'</span>: <span class="number">1</span>,</span><br><span class="line">	<span class="string">'2'</span>: <span class="number">6</span>,</span><br><span class="line">	<span class="string">'3'</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">'4'</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">'5'</span>: <span class="number">2</span>,</span><br><span class="line">	<span class="string">'length'</span>: <span class="number">6</span></span><br><span class="line">&#125;</span><br><span class="line">// 当前轮数</span><br><span class="line">n = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span>(n &lt; a[<span class="string">'length'</span>])</span><br><span class="line">	minIndex = n - <span class="number">1</span></span><br><span class="line">	index = minIndex + <span class="number">1</span></span><br><span class="line">	<span class="keyword">if</span> (index &lt; a[<span class="string">'length'</span>])</span><br><span class="line">		<span class="keyword">if</span> (a[minIndex] &lt; a[index])</span><br><span class="line">			index = index + <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			minIndex = index</span><br><span class="line">			index = index + <span class="number">1</span></span><br><span class="line">		end</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		t = a[n - <span class="number">1</span>]</span><br><span class="line">		a[n - <span class="number">1</span>] = a[minIndex]</span><br><span class="line">		a[minIndex] = t</span><br><span class="line">		n = n + <span class="number">1</span></span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"><span class="keyword">print</span> a</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<ul>
-<li>流程图</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/27/167ef07fb31c98b5?w=602&amp;h=939&amp;f=png&amp;s=54360" alt=""></p>
-<hr>
-<h4 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h4><ul>
-<li>伪代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">a &lt;- &#123;</span><br><span class="line">	<span class="string">'0'</span>:<span class="number">0</span>,</span><br><span class="line">	<span class="string">'1'</span>:<span class="number">2</span>,</span><br><span class="line">	<span class="string">'2'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'3'</span>:<span class="number">56</span>,</span><br><span class="line">	<span class="string">'4'</span>:<span class="number">3</span>,</span><br><span class="line">	<span class="string">'5'</span>:<span class="number">67</span>,</span><br><span class="line">	<span class="string">'6'</span>:<span class="number">3</span>,</span><br><span class="line">	<span class="string">'length'</span>:<span class="number">7</span></span><br><span class="line">&#125;</span><br><span class="line">// length 是数组最大数字加<span class="number">1</span>, 如果存在<span class="string">'66'</span>: <span class="number">1</span>, 那么length 就是 <span class="number">67</span></span><br><span class="line"></span><br><span class="line">hash &lt;- &#123;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">index &lt;- <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(index &lt; a[<span class="string">'length'</span>])</span><br><span class="line">	number &lt;- a[index] </span><br><span class="line">	<span class="keyword">if</span> hash[number] == undefined</span><br><span class="line">		hash[number] &lt;- <span class="number">1</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		hash[number] &lt;- hash[number] + <span class="number">1</span></span><br><span class="line">	end</span><br><span class="line">	index &lt;- index + <span class="number">1</span></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">hash &lt;- &#123;</span><br><span class="line">	<span class="string">'0'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'1'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'2'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'3'</span>:<span class="number">2</span>,</span><br><span class="line">	<span class="string">'56'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'67'</span>:<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">index2 &lt;- <span class="number">0</span></span><br><span class="line">max &lt;- findMax(a) // a中最大值是<span class="number">67</span>, hash的length就是<span class="number">68</span>, 从<span class="number">0</span>开始, <span class="string">'0'</span>:<span class="number">1</span>, <span class="string">'1'</span>:<span class="number">1</span> ..... <span class="string">'67'</span>:<span class="number">1</span></span><br><span class="line">newArr &lt;- &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(index2 &lt;= max)</span><br><span class="line">	count &lt;- hash[index2]</span><br><span class="line">	<span class="keyword">if</span> count != undefined</span><br><span class="line">		countIndex = <span class="number">0</span></span><br><span class="line">		<span class="keyword">while</span>(countIndex &lt; count)</span><br><span class="line">			newArr.push(index2)</span><br><span class="line">			countIndex &lt;- countIndex + <span class="number">1</span></span><br><span class="line">		end</span><br><span class="line">	end</span><br><span class="line">	index2 &lt;- index2 + <span class="number">1</span></span><br><span class="line">end</span><br><span class="line"><span class="keyword">print</span> newArr</span><br></pre></td></tr></table></figure>
-<ul>
-<li>流程图</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/27/167ef07fb325b5c7?w=656&amp;h=1743&amp;f=png&amp;s=96698" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -863,258 +619,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/开博大吉/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiang Tao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YjjTT">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/28/开博大吉/" itemprop="url">不学习干什么?</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-28T18:19:29+08:00">
-                2018-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>学习!!!!</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiang Tao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YjjTT">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/28/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-28T18:18:07+08:00">
-                2018-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1122,6 +631,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1142,8 +655,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1194,6 +716,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS布局"><span class="nav-number">1.</span> <span class="nav-text">CSS布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#盒模型-框模型"><span class="nav-number">1.1.</span> <span class="nav-text">盒模型(框模型)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒模型属性"><span class="nav-number">2.</span> <span class="nav-text">盒模型属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脱离文档流"><span class="nav-number">3.</span> <span class="nav-text">脱离文档流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position和float的区别"><span class="nav-number">4.</span> <span class="nav-text">position和float的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-sizing"><span class="nav-number">5.</span> <span class="nav-text">box-sizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#z-index"><span class="nav-number">6.</span> <span class="nav-text">z-index</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局"><span class="nav-number">7.</span> <span class="nav-text">左右布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左中右布局"><span class="nav-number">8.</span> <span class="nav-text">左中右布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">9.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">10.</span> <span class="nav-text">垂直居中</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1334,6 +872,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
