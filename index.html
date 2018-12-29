@@ -300,257 +300,16 @@
       
         
           
-            <h3 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h3><h4 id="盒模型-框模型"><a href="#盒模型-框模型" class="headerlink" title="盒模型(框模型)"></a>盒模型(框模型)</h4><p>CSS有一些表现不用的框类型分别为box和line-box, 可以通过设置<code>display</code>属性来设定元素的框类型, 其中最常见的三种类型为<code>block</code>, <code>inline</code>, <code>inline-block</code>.</p>
-<p><code>display</code> 是CSS中最重要的用于控制布局的属性, 决定了文档流的流动方向。每个元素都有一个默认的 display 值，这与元素的类型有关, 并且该属性的值是可以修改的。对于大多数元素它们的默认值通常是 <code>block</code> 或 <code>inline</code> 。一个 block 元素通常被叫做块级元素。一个 inline 元素通常被叫做行内元素。</p>
-<hr>
-<p><strong>1. block box</strong></p>
-<ul>
-<li>块框（ <code>block</code> box）是定义为堆放在其他框上的框（例如：其内容会独占一行），而且可以设置它的宽高，之前所有对于框模型的应用适用于块框 （ <code>block</code> box）</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    div就是一个标准的block元素, 一个块级元素会占据一行, 并从上至下流动布局, 其他常用块级元素有p, form, footer, section等</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background: red"</span>&gt;</span>div block box<span class="tag">&lt;/<span class="name">div</span>&gt;</span>这是一行普通的文字，这里有个 <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"display: block; background: red"</span>&gt;</span>盒模型<span class="tag">&lt;/<span class="name">span</span>&gt;</span> 标签。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面代码演示了block box的特性:</p>
-<ol>
-<li>穿插在inline中的block box, 会独占一行.</li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145caacf8c81?w=782&amp;h=119&amp;f=png&amp;s=10836" alt=""></p>
-<hr>
-<p><strong>2. inline box</strong></p>
-<ul>
-<li>行内框（ <code>inline</code> box）与块框是相反的，它随着文档的文字流动（例如：它将会和周围的文字和其他行内元素出现在同一行，而且它的内容会像一段中的文字一样随着文字部分的流动而打乱），对行内盒设置宽高无效，设置padding, margin 和 border都会更新周围文字的位置，但是对于周围的的块框（ <code>block</code> box）不会有影响。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span<span class="tag">&lt;/<span class="name">span</span>&gt;</span>是一个标准的行内元素, 从左至右流动布局,如果流动遇到阻碍, 宽度不够, 换行继续流, 一个行内元素可以在段落中包裹一些文字<span class="tag">&lt;<span class="name">span</span>&gt;</span>而不会打乱布局<span class="tag">&lt;/<span class="name">span</span>&gt;</span>, 其他常用的行内元素, a也是最常用的行内元素, 被用作链接.</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一行普通的文字，这里有个<span class="tag">&lt;<span class="name">em</span>&gt;</span>em<span class="tag">&lt;/<span class="name">em</span>&gt;</span>标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面的代码包含四个box:</p>
-<ol>
-<li>首先是<code>p</code>标签所在的block box, 此box包含了其他的boxes;</li>
-<li>第二个是inline box, inline box不会让内容成块显示,而是从左到右排成一排, 如果有<code>display: inline</code>的标签则属于inline box, 如果是纯文字, 则属于匿名inline box.</li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145caaf1df73?w=328&amp;h=134&amp;f=png&amp;s=17845" alt=""></p>
-<ol>
-<li>第三个也是inline box, 在block box中, 一个一个的inline box 组成了line box.</li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145cab12b040?w=308&amp;h=97&amp;f=png&amp;s=9708" alt=""></p>
-<ol>
-<li>第四个是content area, 是一种围绕文字并看不见的box, content area的大小与<code>font-size</code>, 或者<code>line-height(Chrome默认约为1.2)</code>大小相关.</li>
-</ol>
-<hr>
-<p><strong>inline-block box</strong> </p>
-<ul>
-<li>行内块状框（<code>inline-block</code> box） 像是上述两种的集合：它不会重新另起一行但会像行内框（ <code>inline</code> box）一样随着周围文字而流动，而且他能够设置宽高，并且像块框一样保持了其块特性的完整性，它不会在段落行中断开。</li>
-<li><code>vertical-align</code> 属性会影响到 <code>inline-block</code> 元素，你可能会把它的值设置为 <code>top</code> 。</li>
-<li>你需要设置每一列的宽度</li>
-<li>如果HTML源代码中元素之间有空格，那么列与列之间会产生空隙</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">常用的行内块级元素有, <span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"height: 100px; width: 100px"</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="tag">&lt;<span class="name">span</span>&gt;</span>从左至右流动布局， 并且可以设置宽高<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"background: red"</span>&gt;</span></span><br><span class="line">    展示一个inline block box，比如一个<span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"height: 50px"</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span>, 还有一个图片<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/avatar.jpg"</span> <span class="attr">alt</span>=<span class="string">"图片"</span>&gt;</span>，看吧</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面代码演示了inline block box的特性:</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145caba21d5f?w=778&amp;h=148&amp;f=png&amp;s=10860" alt=""></p>
-<p>上图中, 图片是<code>inline</code>类型, 文字是<code>inline</code>, button是<code>inline block</code>, 由于line box的高度是由其内部的元素最高点到元素最低点的距离, 由于图片和文字属于同一类型,所以会在同一行上并对齐.</p>
-<hr>
-<p><strong>none</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">另一个常用的display值是 none 。一些特殊元素的默认 display 值是它，例如 script 。 display:none 通常被 JavaScript 用来在不删除元素的情况下隐藏或显示元素。</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="盒模型属性"><a href="#盒模型属性" class="headerlink" title="盒模型属性"></a>盒模型属性</h3><p>文档的每个元素被构造成文档布局内的一个矩形框，框每层的大小都可以使用一些特定的CSS属性调整。相关属性如下:</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145cab8ddcaf?w=1328&amp;h=996&amp;f=png&amp;s=64942" alt=""></p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145cac4a32a6?w=431&amp;h=182&amp;f=png&amp;s=16089" alt=""></p>
-<ul>
-<li><code>width</code>和<code>height</code>: 设置<strong>内容框（content box）</strong>的宽度和高度。内容框是框内容显示的区域——包括框内的文本内容，以及表示嵌套子元素的其它框。只有block才能设置宽高, inline不能设置宽高.还有其他属性可以更巧妙地处理内容的大小——设置大小约束而不是绝对的大小。这些属性包括<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/min-width" target="_blank" rel="noopener"><code>min-width</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/max-width" target="_blank" rel="noopener"><code>max-width</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/min-height" target="_blank" rel="noopener"><code>min-height</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/max-height" target="_blank" rel="noopener"><code>max-height</code></a>。</li>
-<li><code>padding</code>: <strong>padding</strong> 表示一个 CSS 框的<strong>内边距</strong> ——这一层位于内容框的外边缘与边界的内边缘之间。该层的大小可以通过简写属性<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding" target="_blank" rel="noopener"><code>padding</code></a> 一次设置所有四个边，或用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding-top" target="_blank" rel="noopener"><code>padding-top</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding-right" target="_blank" rel="noopener"><code>padding-right</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding-bottom" target="_blank" rel="noopener"><code>padding-bottom</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding-left" target="_blank" rel="noopener"><code>padding-left</code></a> 属性一次设置一个边。</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body &#123; padding: 36px;&#125; //对象四边的内边距均为36px </span><br><span class="line">body &#123; padding: 36px 24px; &#125; //上下两边的内边距为36px，左右两边的补丁边距为24px </span><br><span class="line">body &#123; padding: 36px 24px 18px; &#125; //上、下两边的内边距分别为36px、18px，左右两边的内边距为24px </span><br><span class="line">body &#123; padding: 36px 24px 18px 12px; &#125; //上、右、下、左内边距分别为36px、24px、18px、12px</span><br><span class="line">body &#123; padding: auto;&#125; // 浏览器自动</span><br><span class="line">body &#123; padding: 40%;&#125; // 基于父元素的宽度的内边距的长度</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>border</code>: CSS 框的<strong>边界</strong>（border）是一个分隔层，位于内边距的外边缘以及外边距的内边缘之间。边界的默认大小为0——从而让它不可见——不过我们可以设置边界的厚度、风格和颜色让它出现。 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border" target="_blank" rel="noopener"><code>border</code></a> 简写属性可以让我们一次设置所有四个边，例如 <code>border: 1px solid red;</code>, 设置border是调试的最好方法.</li>
-</ul>
-<ol>
-<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-top" target="_blank" rel="noopener"><code>border-top</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-right" target="_blank" rel="noopener"><code>border-right</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-bottom" target="_blank" rel="noopener"><code>border-bottom</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-left" target="_blank" rel="noopener"><code>border-left</code></a>: 分别设置某一边的边界厚度／风格／颜色。</p>
-</li>
-<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-width" target="_blank" rel="noopener"><code>border-width</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-style" target="_blank" rel="noopener"><code>border-style</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-color" target="_blank" rel="noopener"><code>border-color</code></a>: 分别仅设置边界的厚度／风格／颜色，并应用到全部四边边界。</p>
-</li>
-<li><p>你也可以单独设置某一个边的三个不同属性，如 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-top-width" target="_blank" rel="noopener"><code>border-top-width</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-top-style" target="_blank" rel="noopener"><code>border-top-style</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-top-color" target="_blank" rel="noopener"><code>border-top-color</code></a>，等。 </p>
-</li>
-</ol>
-<ul>
-<li><p><code>margin</code>: 外边距（margin）代表 CSS 框周围的外部区域，称为<strong>外边距</strong>，它在布局中推开其它 CSS 框。其表现与 padding 很相似；简写属性为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin" target="_blank" rel="noopener"><code>margin</code></a>，单个属性分别为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-top" target="_blank" rel="noopener"><code>margin-top</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-right" target="_blank" rel="noopener"><code>margin-right</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-bottom" target="_blank" rel="noopener"><code>margin-bottom</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-left" target="_blank" rel="noopener"><code>margin-left</code></a>。</p>
-<blockquote>
-<p><strong>注意</strong>: 外边距有一个特别的行为被称作<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="noopener">外边距塌陷（margin collapsing）</a>：当两个框彼此接触时，它们的间距将取两个相邻外边界的最大值，而非两者的总和。</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body &#123; margin: 36px;&#125; //对象四边的外边距均为36px </span><br><span class="line">body &#123; margin: 36px 24px; &#125; //上下两边的外边距为36px，左右两边的外边距为24px </span><br><span class="line">body &#123; margin: 36px 24px 18px; &#125; //上、下两边的外边距分别为36px、18px，左右两边的外边距为24px </span><br><span class="line">body &#123; margin: 36px 24px 18px 12px; &#125; //上、右、下、左外边距分别为36px、24px、18px、12px</span><br><span class="line">body &#123; margin: auto;&#125; // 浏览器自动</span><br><span class="line">body &#123; margin: 40%;&#125; // 基于父元素的宽度的内边距的长度</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="脱离文档流"><a href="#脱离文档流" class="headerlink" title="脱离文档流"></a>脱离文档流</h3><blockquote>
-<p>什么是文档流?</p>
-<p>就是文档内元素的流动方向.</p>
-<p>浮动元素会脱离正常的文档布局流，并吸附到其父容器的左边或者右边。</p>
-</blockquote>
-<ol>
-<li><code>float</code>浮动: CSS属性指定一个元素应沿其容器的左侧或右侧放置，允许文本和内联元素环绕它。该元素从网页的正常流动中移除，尽管仍然保持部分的流动性.最初引入 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/float" target="_blank" rel="noopener"><code>float</code></a> 属性是为了能让 web 开发人员实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边.</li>
-</ol>
-<ul>
-<li><code>float: left</code>: 表明元素必须浮动在其所在的块容器左侧的关键字。</li>
-<li><code>float: right</code>: 表明元素必须浮动在其所在的块容器右侧的关键字。</li>
-<li><code>float: none</code>: 表明元素不进行浮动的关键字。</li>
-<li>当一个元素浮动之后，它会被移出正常的文档流，然后向左或者向右平移，一直平移直到碰到了所处的容器的边框，或者碰到<strong>另外一个浮动的元素</strong>。</li>
-<li>当给子元素<code>float</code>时, 需要给该子元素的顶级标签清除浮动, 使用<code>clearfix</code>.</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>关于浮动可以看下<a href="https://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/" target="_blank" rel="noopener">张鑫旭的一篇关于浮动的深入研究</a></li>
-</ul>
-<ol>
-<li><code>position</code>定位</li>
-</ol>
-<p><strong>position</strong>属性用于指定一个元素在文档中的定位方式。<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/top" target="_blank" rel="noopener"><code>top</code></a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/right" target="_blank" rel="noopener"><code>right</code></a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/bottom" target="_blank" rel="noopener"><code>bottom</code></a>和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/left" target="_blank" rel="noopener"><code>left</code></a> 属性则决定了该元素的最终位置。</p>
-<p><strong>定位类型</strong></p>
-<ul>
-<li><strong>相对定位元素（**</strong>relatively positioned element<strong>**）</strong>是<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/computed_value" target="_blank" rel="noopener">计算后</a>位置属性为 <code>relative</code>的元素。</li>
-<li><strong>绝对定位元素（absolutely positioned element）</strong>是<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/computed_value" target="_blank" rel="noopener">计算后</a>位置属性为 <code>absolute</code> 或 <code>fixed</code> 的元素。</li>
-</ul>
-<p><strong>取值</strong></p>
-<ul>
-<li>static</li>
-</ul>
-<p>该关键字指定元素使用正常的布局行为，即元素在文档常规流中当前的布局位置。此时 <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> 和 <code>z-index</code>属性无效。</p>
-<ul>
-<li>relative 相对定位</li>
-</ul>
-<blockquote>
-<p>相对定位的元素是在文档中的正常位置偏移给定的值，但是不影响其他元素的偏移</p>
-</blockquote>
-<p>该关键字下，元素先放置在未添加定位时的位置，再在不改变页面布局的前提下调整元素位置（因此会在此元素未添加定位时所在位置留下空白）。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145d41c7748e?w=1564&amp;h=316&amp;f=png&amp;s=71248" alt=""></p>
-<ul>
-<li>absolute 绝对定位</li>
-</ul>
-<blockquote>
-<p>相对定位的元素并未脱离文档流，而绝对定位的元素则脱离了文档流。在布置文档流中其它元素时，绝对定位元素不占据空间, 一般给父元素添加relative, 子元素添加absolute,结合使用.</p>
-</blockquote>
-<p>不为元素预留空间，通过指定元素相对于最近的非 static 定位祖先元素的偏移，来确定元素位置。绝对定位的元素可以设置外边距（margins），且不会与其他边距合并。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145d6b221be5?w=1558&amp;h=344&amp;f=png&amp;s=71871" alt=""></p>
-<ul>
-<li>fixed 固定定位</li>
-</ul>
-<blockquote>
-<p>固定定位与绝对定位相似，但元素的包含块为 viewport 视口。该定位方式常用于创建在滚动屏幕时仍固定在相同位置的元素。</p>
-</blockquote>
-<p>不为元素预留空间，而是通过指定元素相对于屏幕视口（viewport）的位置来指定元素位置。元素的位置在屏幕滚动时不会改变。打印时，元素会出现在的每页的固定位置。<code>fixed</code> 属性会创建新的层叠上下文。当元素祖先的 <code>transform</code>  属性非 <code>none</code> 时，容器由视口改为该祖先。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145d6af9ba84?w=1564&amp;h=336&amp;f=png&amp;s=123825" alt=""></p>
-<hr>
-<h3 id="position和float的区别"><a href="#position和float的区别" class="headerlink" title="position和float的区别"></a>position和float的区别</h3><table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">脱离文档流</th>
-<th style="text-align:center">原占位保留</th>
-<th style="text-align:center">清除方式</th>
-<th style="text-align:center">z-index属性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">float</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">clearfix</td>
-<td style="text-align:center">不支持</td>
-</tr>
-<tr>
-<td style="text-align:center">position: relative</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">position:static</td>
-<td style="text-align:center">支持</td>
-</tr>
-<tr>
-<td style="text-align:center">position: absolute</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">position:static</td>
-<td style="text-align:center">支持</td>
-</tr>
-<tr>
-<td style="text-align:center">position: static</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">支持</td>
-</tr>
-<tr>
-<td style="text-align:center">position: fixed</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">position:static</td>
-<td style="text-align:center">不支持</td>
-</tr>
-</tbody>
-</table>
-<p>float主要就是实现文字环绕图片显示.其他无法做到.浮动就是个带有方位的<code>display:inline-block</code>属性。字之所以会环绕含有<code>float</code>属性的图片时因为<strong>浮动破坏了正常的line boxes</strong>。</p>
-<h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h3><p><strong>盒模型</strong>。当你设置了元素的宽度，实际展现的元素却超出你的设置：这是因为元素的边框和内边距会撑开元素。看下面的例子，两个相同宽度的元素显示的实际宽度却不一样。</p>
-<p><strong>盒模型尺寸有两种</strong></p>
-<ul>
-<li>content-box: 会计算border和padding, 盒模型的默认样式</li>
-<li>Border-box: 不会计算border和padding</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145dc52f4884?w=1550&amp;h=281&amp;f=png&amp;s=58469" alt=""></p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing" target="_blank" rel="noopener"><code>box-sizing</code></a> 通过更改盒模型来拯救我们，盒子的宽度取值为 content + padding + border，而不仅是之前的content——所以当增加内边距或边界的宽度时，不会使盒子更宽——而是会使内容调整得更窄。</p>
-<p>你设置一个元素为 <code>box-sizing: border-box;</code> 时，此元素的内边距和边框不再会增加它的宽度。这里有一个与前一页相同的例子，唯一的区别是两个元素都设置了 <code>box-sizing: border-box;</code> ：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145dce83a837?w=1560&amp;h=284&amp;f=png&amp;s=66001" alt=""></p>
-<h3 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h3><p><code>z-index</code> 属性指定了一个具有定位属性的元素及其子代元素的 z-order。 当元素之间重叠的时候，z-order 决定哪一个元素覆盖在其余元素的上方显示。 通常来说 z-index 较大的元素会覆盖较小的一个。</p>
-<p>对于一个已经定位的元素（即position属性值是非static的元素），<code>z-index</code> 属性指定：</p>
-<ol>
-<li>元素在当前堆叠上下文中的堆叠层级。</li>
-<li>元素是否创建一个新的本地堆叠上下文</li>
-</ol>
-<p><strong>取值</strong></p>
-<ul>
-<li>Auto</li>
-</ul>
-<p>元素不会建立一个新的本地堆叠上下文。当前堆叠上下文中新生成的元素和父元素堆叠层级相同。</p>
-<ul>
-<li>integer</li>
-</ul>
-<p>整型数字是生成的元素在当前堆叠上下文中的堆叠层级。元素同时会创建一个堆叠层级为0的本地堆叠上下文。这意味着子元素的 z-indexes 不与元素外的其余元素的 z-indexes 进行对比。这意味着其实 CSS 允许你在现有的渲染引擎上层叠的摆放盒模型元素。 所有的层都可以用一个整数( z 轴顺序)来表明当前层在 z 轴的位置。 数字越大， 元素越接近观察者。Z 轴顺序用 CSS 的 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index" target="_blank" rel="noopener"><code>z-index</code></a> 属性来指定。</p>
-<hr>
-<h3 id="左右布局"><a href="#左右布局" class="headerlink" title="左右布局"></a>左右布局</h3><ol>
-<li><code>float + margin</code></li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="selector-tag">float</span>: <span class="selector-tag">left</span>;</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.two</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="selector-tag">float</span>: <span class="selector-tag">right</span>;</span><br><span class="line">    <span class="selector-tag">margin-right</span>: 20<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</span><br><span class="line">&#125;</span><br><span class="line">或者</span><br><span class="line"><span class="selector-class">.two</span>&#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145e0eaa78fa?w=1564&amp;h=435&amp;f=png&amp;s=85447" alt=""></p>
-<ol>
-<li><code>position</code></li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.two</span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">  <span class="selector-tag">right</span>: 10<span class="selector-tag">px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145eb27f17d7?w=1567&amp;h=344&amp;f=png&amp;s=98893" alt=""></p>
-<h3 id="左中右布局"><a href="#左中右布局" class="headerlink" title="左中右布局"></a>左中右布局</h3><ol>
-<li><code>float: left, float: right</code></li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.two</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: green;</span><br><span class="line">  <span class="attribute">float</span>: right;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.three</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145ece64164b?w=1568&amp;h=345&amp;f=png&amp;s=86048" alt=""></p>
-<ol>
-<li><code>position: absolute</code></li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.two</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: green;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.three</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c145ef4945a53?w=1559&amp;h=439&amp;f=png&amp;s=94899" alt=""></p>
-<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ol>
-<li><code>margin auto</code> </li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">25px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><code>父元素display:inline-block,子元素text-align: center;</code></li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ol>
-<li><code>margin auto</code></li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">70px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当浏览器窗口比元素的宽度还要窄时，浏览器会显示一个水平滚动条来容纳页面。这时在这种情况下使用 <code>max-width</code> 替代 <code>width</code> 可以使浏览器更好地处理小窗口的情况.</p>
-<ol>
-<li><code>position</code></li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">25px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          CSS布局盒模型(框模型)CSS有一些表现不用的框类型分别为box和line-box, 可以通过设置display属性来设定元素的框类型, 其中最常见的三种类型为block, inline, inline-block.
+display 是CSS中最重要的用于控制布局的属性, 决定了文档流的流动方向。
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/29/CSS布局/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -668,15 +427,17 @@
       
         
           
-            <h3 id="单行文字省略号"><a href="#单行文字省略号" class="headerlink" title="单行文字省略号"></a>单行文字省略号</h3><p>直接上代码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">	....全是文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/24/167df6f80b36fe8b?w=806&amp;h=120&amp;f=png&amp;s=5804" alt=""></p>
-<h3 id="多行文字省略号"><a href="#多行文字省略号" class="headerlink" title="多行文字省略号"></a>多行文字省略号</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">	....全是文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    -webkit-line-clamp: 2; // 代表第几行显示省略号</span><br><span class="line">    <span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/24/167df6f80b2c5e67?w=808&amp;h=142&amp;f=png&amp;s=10125" alt=""></p>
-
-          
+          单行文字省略号直接上代码
+123&lt;div class="demo"&gt;	....全是文字&lt;/div&gt;
+12345.demo&#123;    white-space: nowrap;    overflow: hidden;    text-overflow: ellipsis
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/29/单行多行文字显示省略号/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -794,43 +555,27 @@
       
         
           
-            <h3 id="常见排序算法"><a href="#常见排序算法" class="headerlink" title="常见排序算法"></a>常见排序算法</h3><blockquote>
-<p>本文涉及的算法有: </p>
-<ul>
-<li>冒泡排序</li>
-<li>选择排序</li>
-<li>计数排序</li>
-</ul>
-</blockquote>
-<hr>
-<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><ul>
-<li>伪代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">语法定义: <span class="string">"&lt;-"</span> 赋值符号  a[<span class="number">0</span>]会转换为a[<span class="string">'0'</span>]</span><br><span class="line">a &lt;- &#123;</span><br><span class="line">    <span class="string">'0'</span>: <span class="number">6</span>,</span><br><span class="line">    <span class="string">'1'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'2'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'3'</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="string">'4'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'5'</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">'length'</span>: <span class="number">6</span></span><br><span class="line">&#125;</span><br><span class="line">// 当前循环次数</span><br><span class="line">n &lt;- <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> (n &lt; a[<span class="string">'length'</span>])</span><br><span class="line">	// 当前选中的数字下标 </span><br><span class="line">    index &lt;- <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> (index &lt; a[<span class="string">'length'</span>] - n)</span><br><span class="line">    	<span class="keyword">if</span> (a[index] &lt; a[index+<span class="number">1</span>])</span><br><span class="line">        	index &lt;- index+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        	c &lt;- a[index]</span><br><span class="line">            a[index] &lt;- a[index+<span class="number">1</span>]</span><br><span class="line">            a[index+<span class="number">1</span>] &lt;- c</span><br><span class="line">            index &lt;- index+<span class="number">1</span></span><br><span class="line">        end</span><br><span class="line">        n &lt;- n+<span class="number">1</span></span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line"><span class="keyword">print</span> a</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<ul>
-<li>流程图</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/27/167ef07fb32ac075?w=542&amp;h=938&amp;f=png&amp;s=45723" alt=""></p>
-<hr>
-<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><ul>
-<li>伪代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a &lt;- &#123;</span><br><span class="line">	<span class="string">'0'</span>: <span class="number">3</span>,</span><br><span class="line">	<span class="string">'1'</span>: <span class="number">1</span>,</span><br><span class="line">	<span class="string">'2'</span>: <span class="number">6</span>,</span><br><span class="line">	<span class="string">'3'</span>: <span class="number">4</span>,</span><br><span class="line">	<span class="string">'4'</span>: <span class="number">5</span>,</span><br><span class="line">	<span class="string">'5'</span>: <span class="number">2</span>,</span><br><span class="line">	<span class="string">'length'</span>: <span class="number">6</span></span><br><span class="line">&#125;</span><br><span class="line">// 当前轮数</span><br><span class="line">n = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span>(n &lt; a[<span class="string">'length'</span>])</span><br><span class="line">	minIndex = n - <span class="number">1</span></span><br><span class="line">	index = minIndex + <span class="number">1</span></span><br><span class="line">	<span class="keyword">if</span> (index &lt; a[<span class="string">'length'</span>])</span><br><span class="line">		<span class="keyword">if</span> (a[minIndex] &lt; a[index])</span><br><span class="line">			index = index + <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			minIndex = index</span><br><span class="line">			index = index + <span class="number">1</span></span><br><span class="line">		end</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		t = a[n - <span class="number">1</span>]</span><br><span class="line">		a[n - <span class="number">1</span>] = a[minIndex]</span><br><span class="line">		a[minIndex] = t</span><br><span class="line">		n = n + <span class="number">1</span></span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"><span class="keyword">print</span> a</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<ul>
-<li>流程图</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/27/167ef07fb31c98b5?w=602&amp;h=939&amp;f=png&amp;s=54360" alt=""></p>
-<hr>
-<h4 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h4><ul>
-<li>伪代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">a &lt;- &#123;</span><br><span class="line">	<span class="string">'0'</span>:<span class="number">0</span>,</span><br><span class="line">	<span class="string">'1'</span>:<span class="number">2</span>,</span><br><span class="line">	<span class="string">'2'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'3'</span>:<span class="number">56</span>,</span><br><span class="line">	<span class="string">'4'</span>:<span class="number">3</span>,</span><br><span class="line">	<span class="string">'5'</span>:<span class="number">67</span>,</span><br><span class="line">	<span class="string">'6'</span>:<span class="number">3</span>,</span><br><span class="line">	<span class="string">'length'</span>:<span class="number">7</span></span><br><span class="line">&#125;</span><br><span class="line">// length 是数组最大数字加<span class="number">1</span>, 如果存在<span class="string">'66'</span>: <span class="number">1</span>, 那么length 就是 <span class="number">67</span></span><br><span class="line"></span><br><span class="line">hash &lt;- &#123;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">index &lt;- <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(index &lt; a[<span class="string">'length'</span>])</span><br><span class="line">	number &lt;- a[index] </span><br><span class="line">	<span class="keyword">if</span> hash[number] == undefined</span><br><span class="line">		hash[number] &lt;- <span class="number">1</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		hash[number] &lt;- hash[number] + <span class="number">1</span></span><br><span class="line">	end</span><br><span class="line">	index &lt;- index + <span class="number">1</span></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">hash &lt;- &#123;</span><br><span class="line">	<span class="string">'0'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'1'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'2'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'3'</span>:<span class="number">2</span>,</span><br><span class="line">	<span class="string">'56'</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">'67'</span>:<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">index2 &lt;- <span class="number">0</span></span><br><span class="line">max &lt;- findMax(a) // a中最大值是<span class="number">67</span>, hash的length就是<span class="number">68</span>, 从<span class="number">0</span>开始, <span class="string">'0'</span>:<span class="number">1</span>, <span class="string">'1'</span>:<span class="number">1</span> ..... <span class="string">'67'</span>:<span class="number">1</span></span><br><span class="line">newArr &lt;- &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(index2 &lt;= max)</span><br><span class="line">	count &lt;- hash[index2]</span><br><span class="line">	<span class="keyword">if</span> count != undefined</span><br><span class="line">		countIndex = <span class="number">0</span></span><br><span class="line">		<span class="keyword">while</span>(countIndex &lt; count)</span><br><span class="line">			newArr.push(index2)</span><br><span class="line">			countIndex &lt;- countIndex + <span class="number">1</span></span><br><span class="line">		end</span><br><span class="line">	end</span><br><span class="line">	index2 &lt;- index2 + <span class="number">1</span></span><br><span class="line">end</span><br><span class="line"><span class="keyword">print</span> newArr</span><br></pre></td></tr></table></figure>
-<ul>
-<li>流程图</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/12/27/167ef07fb325b5c7?w=656&amp;h=1743&amp;f=png&amp;s=96698" alt=""></p>
+          常见排序算法
+本文涉及的算法有: 
 
-          
+冒泡排序
+选择排序
+计数排序
+
+
+
+冒泡排序
+伪代码
+
+1234567891011121314151617181920212223242526272829语法定义: "&lt;-" 赋值符号  a[0]会转换为a['0']a &lt;- &#123;    '0
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/28/排序算法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -948,9 +693,16 @@
       
         
           
-            <p>学习!!!!</p>
+          学习!!!!
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/28/开博大吉/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1068,17 +820,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/28/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
