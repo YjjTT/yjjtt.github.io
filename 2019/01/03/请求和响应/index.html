@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="URL, 请求和响应,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="WWW的发明 1989年-1992年, Tim Berners-Lee(李爵士), 发明了WWW(World Wide Web), 一种适用于全世界的网络, 其次还发明了第一个服务器, 第一个浏览器, 第一个网页, 发明了互联网的雏形  主要包含以下三个概念:  URL, 俗称网址(还有URI, URN) HTTP, 两个电脑直接传输内容的协议 HTML, 超级文本, 用来做页面跳转  URL的作">
+<meta name="keywords" content="URL, 请求和响应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="请求和响应">
+<meta property="og:url" content="http://yoursite.com/2019/01/03/请求和响应/index.html">
+<meta property="og:site_name" content="YjjTT">
+<meta property="og:description" content="WWW的发明 1989年-1992年, Tim Berners-Lee(李爵士), 发明了WWW(World Wide Web), 一种适用于全世界的网络, 其次还发明了第一个服务器, 第一个浏览器, 第一个网页, 发明了互联网的雏形  主要包含以下三个概念:  URL, 俗称网址(还有URI, URN) HTTP, 两个电脑直接传输内容的协议 HTML, 超级文本, 用来做页面跳转  URL的作">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d87f41dc5?w=1186&h=434&f=png&s=97787">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95e0b0d0937?w=606&h=166&f=png&s=28826">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d897ac795?w=602&h=178&f=png&s=24800">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d7fc709b5?w=605&h=102&f=png&s=8915">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d811cc219?w=603&h=103&f=png&s=9029">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95db21315b2?w=603&h=379&f=png&s=93589">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95e730655ad?w=599&h=326&f=png&s=48033">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95e746944b3?w=1517&h=468&f=png&s=186041">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95e8c81d23e?w=1508&h=470&f=png&s=166496">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95eb007c768?w=896&h=131&f=png&s=28855">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95ed06ff3de?w=1499&h=464&f=png&s=243276">
+<meta property="og:updated_time" content="2019-01-03T05:13:17.485Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="请求和响应">
+<meta name="twitter:description" content="WWW的发明 1989年-1992年, Tim Berners-Lee(李爵士), 发明了WWW(World Wide Web), 一种适用于全世界的网络, 其次还发明了第一个服务器, 第一个浏览器, 第一个网页, 发明了互联网的雏形  主要包含以下三个概念:  URL, 俗称网址(还有URI, URN) HTTP, 两个电脑直接传输内容的协议 HTML, 超级文本, 用来做页面跳转  URL的作">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d87f41dc5?w=1186&h=434&f=png&s=97787">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/03/请求和响应/">
+
+
+
+
+
+  <title>请求和响应 | YjjTT</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YjjTT</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">今天你JS了么？</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/请求和响应/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiang Tao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YjjTT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">请求和响应</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T13:12:51+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="WWW的发明"><a href="#WWW的发明" class="headerlink" title="WWW的发明"></a>WWW的发明</h3><blockquote>
+<p>1989年-1992年, Tim Berners-Lee(李爵士), 发明了WWW(World Wide Web), 一种适用于全世界的网络, 其次还发明了第一个服务器, 第一个浏览器, 第一个网页, 发明了互联网的雏形</p>
+</blockquote>
+<p>主要包含以下三个概念:</p>
+<ol>
+<li>URL, 俗称网址(还有URI, URN)</li>
+<li>HTTP, 两个电脑直接传输内容的协议</li>
+<li>HTML, 超级文本, 用来做页面跳转</li>
+</ol>
+<p><strong>URL的作用是能让你访问一个页面, HTTP的作用是让你能下载这个页面, HTML的作用是让你能看懂这个页面</strong></p>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><p>一个URL通常由以下几部分组成, 其实还有个端口,只是浏览器给隐藏掉了,默认是80端口</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d87f41dc5?w=1186&amp;h=434&amp;f=png&amp;s=97787" alt=""></p>
+<blockquote>
+<p>baidu.com 和 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 不是同一个域名, 但是都有同一个二级域名</p>
+<p>.com 是顶级域名, baidu 是二级域名, www 是三级域名</p>
+</blockquote>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><blockquote>
+<p><strong>D</strong>omain(域) <strong>N</strong>ame(名) <strong>S</strong>ystem(系统)</p>
+</blockquote>
+<ul>
+<li>输入域名</li>
+</ul>
+<blockquote>
+<p>访问域名: 我问路由, 然后路由去问电信该域名的ip是多少, ip是会变的, 因为百度的服务器有几万台.</p>
+</blockquote>
+<ul>
+<li>输出IP</li>
+</ul>
+<blockquote>
+<p>电信会帮你解析该域名的ip, 帮你解析的服务器就是DNS服务器</p>
+<p>DNS服务器会存储资源, 例如主机记录, 别名记录, IP主机记录等</p>
+</blockquote>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95e0b0d0937?w=606&amp;h=166&amp;f=png&amp;s=28826" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d897ac795?w=602&amp;h=178&amp;f=png&amp;s=24800" alt=""></p>
+<h3 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h3><ul>
+<li><strong>Server</strong> : 服务器，也就是你的电脑。</li>
+<li><strong>Client</strong> ：客户端，也就是你的浏览器。</li>
+<li><strong>HTTP</strong> ：服务器和浏览器之间通信的协议，指导如何进行沟通。</li>
+<li>浏览器负责发起请求</li>
+<li>服务器在80端口接收请求</li>
+<li>服务器负责返回内容（响应）</li>
+<li>浏览器负责下载响应内容</li>
+</ul>
+<h3 id="curl请求的使用"><a href="#curl请求的使用" class="headerlink" title="curl请求的使用"></a>curl请求的使用</h3><blockquote>
+<p>curl是 一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称url为下载工具。</p>
+</blockquote>
+<p>列举几种常用的带参数的curl命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">curl "http://example.com" -o filename # 将下载的内容写到文件中 output</span><br><span class="line"></span><br><span class="line">curl "http://example.com" &gt; filename # 同上</span><br><span class="line"></span><br><span class="line">curl -O "http://example.com/filename" # 下载文件(.jpg, .png等)，并保留远程文件名 remote-name</span><br><span class="line"></span><br><span class="line">curl -L "http://example.com/filename" # Location redirects 重定向</span><br><span class="line"></span><br><span class="line">curl -s -v -H -- "http://example.com/filename" </span><br><span class="line"><span class="meta">#</span> -s 静音模式，不显示下载进度等其他的东西； </span><br><span class="line"><span class="meta">#</span> -v verbose 用于打印更多信息，包括发送的请求信息，这在调试脚本是特别有用；</span><br><span class="line"><span class="meta">#</span> -H 自定义header头信息传递给服务器, 添加响应头</span><br><span class="line"><span class="meta">#</span> GET 请求</span><br><span class="line"></span><br><span class="line">curl -d 'name=yjjtt' "http://example.com/filename" # -d data，POST请求传递数据</span><br><span class="line">curl -X POST -d 'name=yjjtt' "http://example.com/filename" # -X 指定POST request， -d data</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 其他的自行google linux curl就好了</span><br></pre></td></tr></table></figure>
+<h3 id="curl-请求"><a href="#curl-请求" class="headerlink" title="curl 请求"></a>curl 请求</h3><ul>
+<li>请求最多包含四部分, 最少包含三部分, 第四部分可以为空, 第四部分是要上传的数据</li>
+<li>第三部分永远是一个回车</li>
+<li>第一部分的路径不包含锚点, 如果没有写路径默认为/</li>
+<li>第二部分的Content-Type标注了第四部分的格式</li>
+</ul>
+<p><strong>具体参照下面的例子来分析:</strong></p>
+<h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><p>命令行输入该命令，<code>curl -s -v -H &quot;yjjtt: xxx&quot; -- &quot;https://www.baidu.com&quot;</code></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d7fc709b5?w=605&amp;h=102&amp;f=png&amp;s=8915" alt=""></p>
+<p>上图就是curl请求的内容</p>
+<ol>
+<li>GET / HTTP/1.1 : <code>GET</code>代表动词（GET, POST, PUT,DELETE , PATCH, HEAD, OPTIONS）； <code>/</code>代表路径，当网址后面加上绝对路径时会显示，不加则显示<code>/</code>;<code>HTTP/1.1</code>代表协议/版本</li>
+<li>第二部分是图中所有的key:value, 2-5行都是</li>
+<li>第三部分是回车</li>
+<li>第四部分为空</li>
+</ol>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p>命令行输入该命令，<code>curl -X POST -s -v -H &quot;yjjtt: xxx&quot; -- &quot;https://www.baidu.com&quot;</code></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95d811cc219?w=603&amp;h=103&amp;f=png&amp;s=9029" alt=""></p>
+<ul>
+<li>GET和POST的请求格式一样</li>
+</ul>
+<h3 id="请求的格式"><a href="#请求的格式" class="headerlink" title="请求的格式"></a>请求的格式</h3><blockquote>
+<p>1 动词 路径 协议/版本</p>
+<p>2 key1: value1</p>
+<p>2 key2: value2</p>
+<p>2 key3: value3</p>
+<p>2 Content-type: application/x-www-form-urlencoded</p>
+<p>2 Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
+<p>2 User-Agent: curl/7.54.0</p>
+<p>3 /n回车</p>
+<p>4 要上传的数据</p>
+</blockquote>
+<h3 id="curl响应"><a href="#curl响应" class="headerlink" title="curl响应"></a>curl响应</h3><ul>
+<li>响应包含四部分, 第四部分为要下载的内容, 可以很长很长</li>
+<li>状态码要背, 是服务器对浏览器说的话</li>
+</ul>
+<blockquote>
+<p>200 普通成功 204 创建成功<br>301 滚 永久不存在 location会告诉新地址<br>302 临时不存在<br>404 页面不存在, 浏览器错误<br>502 服务器错误 server taskcenter start/stop</p>
+</blockquote>
+<ul>
+<li>第二部分的Content-Type 标注了第四部分的格式</li>
+<li>第 2 部分中的 Content-Type 遵循 MIME 规范</li>
+</ul>
+<h3 id="GET-1"><a href="#GET-1" class="headerlink" title="GET"></a>GET</h3><p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95db21315b2?w=603&amp;h=379&amp;f=png&amp;s=93589" alt=""></p>
+<p>上图就是GET请求的响应内容</p>
+<ol>
+<li>第一部分: <code>HTTP/1.1</code> 协议/版本, <code>200</code>状态码, <code>OK</code>状态解释</li>
+<li>第二部分: key:value</li>
+<li>第三部分: 回车</li>
+<li>第四部分: 要下载的内容,百度首页的HTML, 由第二部分的Content-Type决定, 如果将第二部分Content-Type的value改成<code>text/htlm</code>,将会报错</li>
+</ol>
+<h3 id="POST-1"><a href="#POST-1" class="headerlink" title="POST"></a>POST</h3><p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95e730655ad?w=599&amp;h=326&amp;f=png&amp;s=48033" alt=""></p>
+<p>上图出现302 状态码, 是因为百度首页不支持POST, 所以第五部分会返回很抱歉，您要访问的页面不存在！</p>
+<ul>
+<li>GET和POST请求对应的响应可以一样,也可以不一样</li>
+<li>响应的第四部分很长很长</li>
+</ul>
+<h3 id="响应的格式"><a href="#响应的格式" class="headerlink" title="响应的格式"></a>响应的格式</h3><blockquote>
+<p>1 协议/版本 状态码 状态解释</p>
+<p>2 key1: value1</p>
+<p>2 key2: value2</p>
+<p>2 key3: value3</p>
+<p>2 Content-type: text/html</p>
+<p>2 Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
+<p>2 Content-Length: 17931</p>
+<p>3 /n回车</p>
+<p>4 要下载的内容</p>
+</blockquote>
+<h3 id="使用Chrome发GET请求"><a href="#使用Chrome发GET请求" class="headerlink" title="使用Chrome发GET请求"></a>使用Chrome发GET请求</h3><p>以<a href="http://www.baidu.com为例" target="_blank" rel="noopener">www.baidu.com为例</a></p>
+<ol>
+<li>Chrome浏览器输入<a href="http://www.baidu.com访问" target="_blank" rel="noopener">www.baidu.com访问</a></li>
+<li>右键检查,选择NetWork,刷新页面</li>
+<li>选中第一个响应</li>
+<li>查看Headers中的Request Headers, 点击<strong>view source</strong></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95e746944b3?w=1517&amp;h=468&amp;f=png&amp;s=186041" alt=""></p>
+<ol>
+<li><p>如上图可以看到请求的三部分</p>
+</li>
+<li><p>如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</p>
+</li>
+</ol>
+<h3 id="使用Chrome查看GET请求的响应"><a href="#使用Chrome查看GET请求的响应" class="headerlink" title="使用Chrome查看GET请求的响应"></a>使用Chrome查看GET请求的响应</h3><p>同样以<a href="http://www.baidu.com为例" target="_blank" rel="noopener">www.baidu.com为例</a></p>
+<ol>
+<li>Chrome浏览器输入<a href="http://www.baidu.com访问" target="_blank" rel="noopener">www.baidu.com访问</a></li>
+<li>右键检查,选择NetWork,刷新页面</li>
+<li>选中第一个响应</li>
+<li>查看Headers中的Response Headers, 点击<strong>view source</strong></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95e8c81d23e?w=1508&amp;h=470&amp;f=png&amp;s=166496" alt=""></p>
+<ol>
+<li>如上图可以看到响应的三部分</li>
+</ol>
+<h3 id="使用Chrome发POST请求"><a href="#使用Chrome发POST请求" class="headerlink" title="使用Chrome发POST请求"></a>使用Chrome发POST请求</h3><p>同样以<a href="http://www.baidu.com为例" target="_blank" rel="noopener">www.baidu.com为例</a>, 需要先退出百度账号的登录,然后进行登录, 因为登录是POST的请求</p>
+<ol>
+<li>登录之前先选中NetWork的Preserve log, 防止页面更新,看不到POST请求</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95eb007c768?w=896&amp;h=131&amp;f=png&amp;s=28855" alt=""></p>
+<ol>
+<li>登录, 选中?login的响应</li>
+<li>查看对应的请求和响应</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/11/1679c95ed06ff3de?w=1499&amp;h=464&amp;f=png&amp;s=243276" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/URL-请求和响应/" rel="tag"># URL, 请求和响应</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/03/网络和IP/" rel="next" title="网络和IP">
+                <i class="fa fa-chevron-left"></i> 网络和IP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/03/Bash脚本/" rel="prev" title="Bash脚本">
+                Bash脚本 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jiang Tao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#WWW的发明"><span class="nav-number">1.</span> <span class="nav-text">WWW的发明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL"><span class="nav-number">2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS"><span class="nav-number">3.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求与响应"><span class="nav-number">4.</span> <span class="nav-text">请求与响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl请求的使用"><span class="nav-number">5.</span> <span class="nav-text">curl请求的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl-请求"><span class="nav-number">6.</span> <span class="nav-text">curl 请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GET"><span class="nav-number">7.</span> <span class="nav-text">GET</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST"><span class="nav-number">8.</span> <span class="nav-text">POST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求的格式"><span class="nav-number">9.</span> <span class="nav-text">请求的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl响应"><span class="nav-number">10.</span> <span class="nav-text">curl响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GET-1"><span class="nav-number">11.</span> <span class="nav-text">GET</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST-1"><span class="nav-number">12.</span> <span class="nav-text">POST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应的格式"><span class="nav-number">13.</span> <span class="nav-text">响应的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Chrome发GET请求"><span class="nav-number">14.</span> <span class="nav-text">使用Chrome发GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Chrome查看GET请求的响应"><span class="nav-number">15.</span> <span class="nav-text">使用Chrome查看GET请求的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Chrome发POST请求"><span class="nav-number">16.</span> <span class="nav-text">使用Chrome发POST请求</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiang Tao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

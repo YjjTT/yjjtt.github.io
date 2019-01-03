@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML 常用标签Iframe标签HTML内联框架元素表示嵌套的浏览上下文, 有效地将另一个HTML页面嵌入到当前页面中。在HTML 4.01中，文档可能包含头部和正文，或头部和框架集，但不能包含正文和框架集。但是，可以在正常的文档主体中使用。每个浏览上下文都有自己的会话历史记录和活动文档。包含嵌入内容的浏览上下文称为父浏览上下文。顶级浏览上下文（没有父级）通常是浏览器窗口。  iframe目前用">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML常用标签">
+<meta property="og:url" content="http://yoursite.com/2019/01/03/HTML常用标签/index.html">
+<meta property="og:site_name" content="YjjTT">
+<meta property="og:description" content="HTML 常用标签Iframe标签HTML内联框架元素表示嵌套的浏览上下文, 有效地将另一个HTML页面嵌入到当前页面中。在HTML 4.01中，文档可能包含头部和正文，或头部和框架集，但不能包含正文和框架集。但是，可以在正常的文档主体中使用。每个浏览上下文都有自己的会话历史记录和活动文档。包含嵌入内容的浏览上下文称为父浏览上下文。顶级浏览上下文（没有父级）通常是浏览器窗口。  iframe目前用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/14/167aa9a68fd3ae49?w=914&h=708&f=png&s=145914">
+<meta property="og:updated_time" content="2019-01-03T05:11:45.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML常用标签">
+<meta name="twitter:description" content="HTML 常用标签Iframe标签HTML内联框架元素表示嵌套的浏览上下文, 有效地将另一个HTML页面嵌入到当前页面中。在HTML 4.01中，文档可能包含头部和正文，或头部和框架集，但不能包含正文和框架集。但是，可以在正常的文档主体中使用。每个浏览上下文都有自己的会话历史记录和活动文档。包含嵌入内容的浏览上下文称为父浏览上下文。顶级浏览上下文（没有父级）通常是浏览器窗口。  iframe目前用">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/12/14/167aa9a68fd3ae49?w=914&h=708&f=png&s=145914">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/03/HTML常用标签/">
+
+
+
+
+
+  <title>HTML常用标签 | YjjTT</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YjjTT</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">今天你JS了么？</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/HTML常用标签/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiang Tao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YjjTT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML常用标签</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T13:11:19+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="HTML-常用标签"><a href="#HTML-常用标签" class="headerlink" title="HTML 常用标签"></a>HTML 常用标签</h2><h3 id="Iframe标签"><a href="#Iframe标签" class="headerlink" title="Iframe标签"></a>Iframe标签</h3><p><strong>HTML内联框架元素<iframe></iframe></strong>表示嵌套的浏览上下文, 有效地将另一个HTML页面嵌入到当前页面中。在HTML 4.01中，文档可能包含头部和正文，或头部和框架集，但不能包含正文和框架集。但是，<iframe>可以在正常的文档主体中使用。每个浏览上下文都有自己的会话历史记录和活动文档。包含嵌入内容的浏览上下文称为父浏览上下文。顶级浏览上下文（没有父级）通常是浏览器窗口。</iframe></p>
+<blockquote>
+<p>iframe目前用的比较少, 一些遗留项目会使用iframe</p>
+</blockquote>
+<p><strong>属性</strong></p>
+<ol>
+<li><code>frameborder</code>, iframe默认会有一个很丑的边框, 所有在写iframe的时候, 加上属性<code>frameborder=&quot;0&quot;</code>可以消除边框.</li>
+<li>css写样式的时候, <code>width</code>可以是使用百分比或者像素, <code>height</code>只能是像素.</li>
+<li><code>name</code> , 通常与a标签结合使用.</li>
+<li><code>src</code>,  一般都是网址<code>src=&quot;http://www.baidu.com&quot;</code>, 也可以是相对路径<code>src=&quot;./index.html&quot;</code>, 嵌套空白页<code>src=&quot;about:blank&quot;</code>或者是<code>src=&quot;#&quot;</code></li>
+<li><code>sandbox</code>, 如果指定了空字符串，该属性对呈现在iframe框架中的内容启用一些额外的限制条件。属性值可以是用空格分隔的一系列指定的字符串, 比如:<code>sandbox=&quot;allow-forms&quot;</code></li>
+</ol>
+<ul>
+<li><code>allow-forms</code>:允许嵌入的浏览上下文可以提交表单。如果该关键字未使用，该操作将不可用。</li>
+<li><code>allow-modals</code>: 允许内嵌浏览环境打开模态窗口。</li>
+<li><code>allow-orientation-lock</code>: 允许内嵌浏览环境禁用屏幕朝向锁定</li>
+</ul>
+<ol>
+<li><code>srcdoc</code>, 该属性值可以是HTML代码，这些代码会被渲染到iframe中，如果同时指定了src属性，srcdoc会覆盖src所指向的页面。该属性最好能与sandbox和seamless属性一起使用。</li>
+<li><code>seamless</code>, 该布尔属性指示浏览器将iframe渲染成容器页面文档的一部分。例如，通过打被包含的文档的链接，在iframe页面的样式被渲染之前，父页面的CSS样式就可以应用在iframe中（除非被其他设置阻止）。</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/14/167aa9a68fd3ae49?w=914&amp;h=708&amp;f=png&amp;s=145914" alt=""></p>
+<hr>
+<h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p><strong>HTML <a></a></strong> 元素  (或锚元素) 可以创建一个到其他网页、文件、同一页面内的位置、电子邮件地址或任何其他URL的超链接。</p>
+<p><strong>属性</strong></p>
+<ol>
+<li><code>download</code>: 此属性指示浏览器下载URL或者文件而不是导航到它，因此将提示用户将其保存为本地文件。<strong>此属性仅使用于<a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">同源URL</a></strong>, 如果不是同源(同域), 将会导航到该URL, 例如:</li>
+</ol>
+<ul>
+<li><code>&lt;a href=&quot;http://127.0.0.1:8080/index.html&quot; download=&quot;ss&quot;&gt;下载&lt;/a&gt;</code> 会下载同源的一个ss.html</li>
+<li><code>&lt;a href=&quot;http://qq.com&quot; download=&quot;ss&quot;&gt;下载&lt;/a&gt;</code>, <code>download</code>无效, 导航到qq.com</li>
+</ul>
+<ol>
+<li><code>target</code>: 该属性指定在何处显示链接的资源。 取值为标签（tab），窗口（window），或框架（iframe）等浏览上下文的名称或其他关键词。</li>
+</ol>
+<ul>
+<li><code>target=&quot;_self&quot;</code>: 当前页面加载, 如果没有指定此属性的话, 该值是默认值.</li>
+<li><code>target=&quot;_blank&quot;</code>: 新窗口打开</li>
+<li><code>target=&quot;_parent&quot;</code>: 会加载到当前页面的父页面, 如果没有父页面,则等同于<code>_self</code></li>
+<li><code>targe=&quot;_top&quot;</code>: 会加载到最上层页面, 祖先级页面, 当index1.thml包含index2.html, index2.html包含index3.html, 则index3.html中的跳转则会加载到index1.html上</li>
+</ul>
+<ol>
+<li><code>href</code>: 包含超链接指向的URL或URL片段。</li>
+</ol>
+<ul>
+<li><code>&lt;a href=&quot;qq.com&quot;&gt;QQ&lt;/a&gt;</code>: 点击QQ不会跳转到qq.com, 会把qq.com当成文件, <strong>不是以.com为后缀就是网址,也可以是文件</strong></li>
+<li><code>&lt;a href=&quot;//qq.com&quot;&gt;QQ&lt;/a&gt;</code>, 不写协议的时候, 无协议绝对地址, 默认是当前页面协议, 是file协议, 就跳转file://qq.com, 是HTTP协议, 就跳转<a href="http://qq.com" target="_blank" rel="noopener">http://qq.com</a>.</li>
+<li><code>&lt;a href=&quot;xxx.html&quot;&gt;QQ&lt;/a&gt;</code>, 相对路径, 路径只会以目录为参考, 如果在index.html中跳转, 并不会以index.html为前缀<code>index.html/xxx.html</code>, 会显示<code>xxx.html</code></li>
+<li><code>&lt;a href=&quot;#1&quot;&gt;QQ&lt;/a&gt;</code>, 写锚点, 会自动加到后面, 不会发起请求, <code>index.html#1</code>, 虽然不会发起请求,但是页面会有变化.</li>
+<li><code>&lt;a href=&quot;?name=xxx&quot;&gt;QQ&lt;/a&gt;</code>, 写参数, 会自动加到后面, 并发起GET请求, <code>index.html?name=xxx</code></li>
+<li><code>&lt;a href=&quot;javascript: alert(1)&quot;&gt;QQ&lt;/a&gt;</code>, 伪协议, 会执行js代码.</li>
+<li><code>&lt;a href=&quot;javascript:;&quot;&gt;QQ&lt;/a&gt;</code>, 伪协议, 使其标签点击不跳转</li>
+<li><code>&lt;a href=&quot;&quot;&gt;QQ&lt;/a&gt;</code>, 什么也不写, 页面会刷新, 跳转到了自己.</li>
+</ul>
+<ol>
+<li><code>name</code>: 和iframe配合使用</li>
+</ol>
+<hr>
+<h3 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h3><p><strong>HTML <form></form></strong> <strong>元素</strong> 表示了文档中的一个区域，这个区域包含有交互控制元件，用来向web服务器提交信息。</p>
+<blockquote>
+<p><strong>a标签和form标签都是跳转, 区别就是a标签发起的是GET请求, form标签发起的是POST请求.</strong></p>
+</blockquote>
+<p><strong>属性</strong></p>
+<ol>
+<li><code>action</code>: 提交(POST)数据所到的地方.<code>action=&quot;users&quot;</code>, 就是提交到users, 一个处理这个form信息的程序所在的URL.</li>
+<li><code>autocomplete</code>: 用于指示 input 元素是否能够拥有一个默认值，这个默认值是由浏览器自动补全的。这个设定可以被属于这个form的子元素的 <code>autocomplete</code> 属性重载（覆盖）</li>
+</ol>
+<ul>
+<li><code>off</code>: 在每一个用到的输入域里，用户必须显式的输入一个值，或者document 以它自己的方式提供自动补全；浏览器不会自动补全输入。</li>
+<li><code>on</code>: 浏览器能够根据用户之前在form里输入的值自动补全。</li>
+</ul>
+<ol>
+<li><code>enctype</code>: 当 <code>method</code> 属性值为 <code>post 时</code>, enctype 是提交form给服务器的内容的 <a href="http://en.wikipedia.org/wiki/Mime_type" target="_blank" rel="noopener">MIME 类型</a></li>
+</ol>
+<ul>
+<li><code>application/x-www-form-urlencoded</code>: 如果属性未指定时的默认值</li>
+<li><code>multipart/form-data</code>: 这个值用于一个 <code>type</code> 属性设置为 “file” 的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input" target="_blank" rel="noopener"><code></code></a> 元素。</li>
+<li><code>text/plain (HTML5)</code></li>
+</ul>
+<ol>
+<li><code>method</code>: 浏览器使用这种 <a href="https://developer.mozilla.org/en-US/docs/HTTP" target="_blank" rel="noopener">HTTP</a> 方式来提交 form, GET一般不用写, 如果是GET, 提交的数据会被作为查询参数, 并不会放到第四部分作为formdata, POST会把提交的数据放到formdata里, 如果要给POST加查询参数, 可以通过给URL加查询参数<code>?user=zzz</code></li>
+</ol>
+<ul>
+<li><code>post</code>: 指的是 HTTP <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank" rel="noopener">POST 方法</a> ; 表单数据会包含在表单体内然后发送给服务器.</li>
+<li><code>get</code>: 指的是 HTTP <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank" rel="noopener">GET 方法</a>; 表单数据会附加在 <code>action</code> 属性的URL中，并以 ‘?’ 作为分隔符, 然后这样得到的 URI 再发送给服务器. 当这样做（数据暴露在URL里面）没什么副作用，或者表单仅包含ASCII字符时，再使用这种方法吧。</li>
+</ul>
+<ol>
+<li><code>target</code>: 和a标签相同</li>
+<li><code>name</code> : HTML5中，一个文档中的多个form当中，name必须唯一而不仅仅是一个空字符串. 也可以与<strong>iframe标签</strong>配合使用.</li>
+</ol>
+<p><strong>如果form标签没有提交按钮, 则无法提交, html里只有form标签能提交数据</strong></p>
+<hr>
+<h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p><strong>HTML input 元素</strong>用于为基于Web的表单创建交互式控件，以便接受来自用户的数据。使用input标签提交数据, 必须有name属性.</p>
+<p><strong>属性</strong></p>
+<ol>
+<li><code>type</code> : 要呈现的控件类型</li>
+</ol>
+<ul>
+<li><code>type=&quot;button&quot;</code>: 普通按钮 <input type="button" value="提交"></li>
+<li><code>type=&quot;checkbox&quot;</code>: 复选框。必须使用 value 属性定义此控件被提交时的值<input type="checkbox"></li>
+<li><code>color</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于指定颜色的控件。<input type="color"></li>
+<li><code>date：</code><a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于输入日期的控件（年，月，日，不包括时间）。<input type="date"></li>
+<li><code>datetime</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 基于 UTC 时区的日期时间输入控件（时，分，秒及几分之一秒）。<input type="datetime"></li>
+<li><code>datetime-local</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于输入日期时间控件，不包含时区。<input type="datetime-local"></li>
+<li><code>email</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于编辑 e-mail 的字段。 合适的时候可以使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid" target="_blank" rel="noopener"><code>:valid</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:invalid" target="_blank" rel="noopener"><code>:invalid</code></a> CSS 伪类。<input type="email"></li>
+<li><code>file</code>：此控件可以让用户选择文件。使用 accept 属性可以定义控件可以选择的文件类型。<input type="file"></li>
+<li><code>hidden</code>：不显示在页面上的控件，但它的值会被提交到服务器。<input type="hidden"></li>
+<li><code>image</code>：图片提交按钮。必须使用 src 属性定义图片的来源及使用 alt 定义替代文本。还可以使用 height 和 width 属性以像素为单位定义图片的大小。<input type="image" src="#"></li>
+<li><code>month</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于输入年月的控件，不带时区。<input type="month"></li>
+<li><code>number</code>: <a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于输入浮点数的控件。<input type="number"></li>
+<li><code>password</code>：一个值被遮盖的单行文本字段。使用 maxlength 指定可以输入的值的最大长度 。<input type="password"></li>
+<li><code>radio</code>：单选按钮。必须使用 value 属性定义此控件被提交时的值。使用checked 必须指示控件是否缺省被选择。在同一个”单选按钮组“中，所有单选按钮的 name 属性使用同一个值； 一个单选按钮组中是，同一时间只有一个单选按钮可以被选择。<input type="radio" name="xxx"> <input type="radio" name="xxx"></li>
+<li><code>reset</code>：用于将表单所内容设置为缺省值的按钮。<input type="reset"></li>
+<li><code>search</code>：用于输入搜索字符串的单行文本字段。换行会被从输入的值中自动移除。<input type="search"></li>
+<li><code>submit</code>：用于提交表单的按钮。<input type="submit"></li>
+<li><code>tel</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于输入电话号码的控件；换行会被自动从输入的值中移除A，但不会执行其他语法。可以使用属性，比如 pattern 和 maxlength 来约束控件输入的值。恰当的时候，可以应用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid" target="_blank" rel="noopener"><code>:valid</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:invalid" target="_blank" rel="noopener"><code>:invalid</code></a> CSS 伪类。<input type="tel"></li>
+<li><code>text</code>：单行字段；换行会将自动从输入的值中移除。<input type="text"></li>
+<li><code>time</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于输入不含时区的时间控件。<input type="time"></li>
+<li><code>url</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于编辑URL的字段。 The user may enter a blank or invalid address. 换行会被自动从输入值中移队。可以使用如：pattern 和 maxlength 样的属性来约束输入的值。 恰当的时候使可以应用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid" target="_blank" rel="noopener"><code>:valid</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:invalid" target="_blank" rel="noopener"><code>:invalid</code></a> CSS 伪类。<input type="url"></li>
+<li><code>week</code>：<a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5" target="_blank" rel="noopener">HTML5</a> 用于输入一个由星期-年组成的日期，日期不包括时区。<input type="week"></li>
+</ul>
+<ol>
+<li><p><code>accept</code>: 如果该元素的 <strong>type</strong> 属性的值<code>是file</code>,则该属性表明了服务器端可接受的文件类型；否则它将被忽略,该属性的值必须为一个逗号分割的列表,包含了多个唯一的内容类型声明：</p>
+<ul>
+<li><p>以 STOP 字符 (U+002E) 开始的文件扩展名。（例如：”.jpg,.png,.doc”）</p>
+</li>
+<li><p>一个有效的 MIME 类型，但没有扩展名</p>
+</li>
+<li><code>audio/*</code> 表示音频文件 </li>
+<li><code>video/*</code> 表示视频文件</li>
+<li><code>image/*</code> 表示图片文件</li>
+</ul>
+</li>
+<li><p><code>autocomplete</code>: 这个属性表示这个控件的值是否可被浏览器自动填充。如果<strong>type</strong>属性的值是hidden、checkbox、radio、file，或为按钮类型（button、submit、reset、image），则本属性被忽略。</p>
+</li>
+<li><p><code>autofocus</code>: 这个布尔属性允许您指定的表单控件在页面加载时具有焦点（自动获得焦点），除非用户将其覆盖，例如通过键入不同的控件。文档中只有一个表单元素可以具有autofocus属性，它是一个布尔值。 如果type属性设置为隐藏则不能应用（即您不能自动获得焦点的属性设置为隐藏的控件）。</p>
+</li>
+<li><p><code>disabled</code>: 这个布尔属性表示此表单控件不可用。 特别是在禁用的控件中， <code>click</code> 事件 <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#enabling-and-disabling-form-controls" target="_blank" rel="noopener">将不会被分发</a> 。 并且，禁用的控件的值在提交表单时也不会被提交。如果 <strong>type</strong> 属性为  hidden，此属性将被忽略。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input" target="_blank" rel="noopener">more</a></p>
+</li>
+</ol>
+<hr>
+<h3 id="button标签"><a href="#button标签" class="headerlink" title="button标签"></a>button标签</h3><p><strong>HTML button 元素</strong>表示一个可点击的按钮，可以用在<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms" target="_blank" rel="noopener">表单</a>或文档其它需要使用简单标准按钮的地方</p>
+<p><strong>input和button区别</strong>: 是否是空元素, button有子元素, input没有</p>
+<hr>
+<p><strong>属性</strong></p>
+<ol>
+<li><code>type</code>: button的类型</li>
+</ol>
+<ul>
+<li><code>submit</code>:  此按钮将表单数据提交给服务器。如果未指定属性，或者属性动态更改为空值或无效值，则此值为默认值。</li>
+<li><code>reset</code>:  此按钮重置所有组件为初始值。</li>
+<li><code>button</code>: 此按钮没有默认行为。它可以有与元素事件相关的客户端脚本，当事件出现时可触发。</li>
+<li>menu: 此按钮打开一个由指定<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/menu" target="_blank" rel="noopener"><code></code></a>元素进行定义的弹出菜单。</li>
+<li>如果form表单里只有一个button标签, 那么这个button标签会自动升级为提交submit按钮</li>
+</ul>
+<ol>
+<li><code>name</code>: button的名称，与表单数据一起提交。</li>
+<li><code>value</code>: button的初始值。它定义的值与表单数据的提交按钮相关联。当表单中的数据被提交时，这个值便以参数的形式被递送至服务器。</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button" target="_blank" rel="noopener">more</a></li>
+</ol>
+<hr>
+<h3 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/29/CSS布局/" rel="next" title="CSS布局">
+                <i class="fa fa-chevron-left"></i> CSS布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/03/网络和IP/" rel="prev" title="网络和IP">
+                网络和IP <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jiang Tao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-常用标签"><span class="nav-number">1.</span> <span class="nav-text">HTML 常用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iframe标签"><span class="nav-number">1.1.</span> <span class="nav-text">Iframe标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a标签"><span class="nav-number">1.2.</span> <span class="nav-text">a标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#form标签"><span class="nav-number">1.3.</span> <span class="nav-text">form标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input标签"><span class="nav-number">1.4.</span> <span class="nav-text">input标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#button标签"><span class="nav-number">1.5.</span> <span class="nav-text">button标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#持续更新"><span class="nav-number">1.6.</span> <span class="nav-text">持续更新</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiang Tao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

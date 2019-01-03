@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="command-line,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="命令行基础命令行是什么? 命令行界面(command-line interface), 缩写CLI, 是在图形用户界面(比尔盖茨的windows)得到普及之前使用最为广泛的用户界面, 相比命令行而言,图形界面才是异端,世界上第一个程序员(女)就是通过命令行来变成的.   如何学习命令行? 背单词(常用的命令行单词)     Directory 目录/文件夹     file 文件   make 新">
+<meta name="keywords" content="command-line">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命令行基础">
+<meta property="og:url" content="http://yoursite.com/2019/01/03/命令行基础/index.html">
+<meta property="og:site_name" content="YjjTT">
+<meta property="og:description" content="命令行基础命令行是什么? 命令行界面(command-line interface), 缩写CLI, 是在图形用户界面(比尔盖茨的windows)得到普及之前使用最为广泛的用户界面, 相比命令行而言,图形界面才是异端,世界上第一个程序员(女)就是通过命令行来变成的.   如何学习命令行? 背单词(常用的命令行单词)     Directory 目录/文件夹     file 文件   make 新">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-03T05:14:44.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="命令行基础">
+<meta name="twitter:description" content="命令行基础命令行是什么? 命令行界面(command-line interface), 缩写CLI, 是在图形用户界面(比尔盖茨的windows)得到普及之前使用最为广泛的用户界面, 相比命令行而言,图形界面才是异端,世界上第一个程序员(女)就是通过命令行来变成的.   如何学习命令行? 背单词(常用的命令行单词)     Directory 目录/文件夹     file 文件   make 新">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/03/命令行基础/">
+
+
+
+
+
+  <title>命令行基础 | YjjTT</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YjjTT</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">今天你JS了么？</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/命令行基础/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiang Tao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YjjTT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">命令行基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T13:14:12+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="命令行基础"><a href="#命令行基础" class="headerlink" title="命令行基础"></a>命令行基础</h2><h3 id="命令行是什么"><a href="#命令行是什么" class="headerlink" title="命令行是什么?"></a>命令行是什么?</h3><blockquote>
+<p>命令行界面(command-line interface), 缩写CLI, 是在图形用户界面(比尔盖茨的windows)得到普及之前使用最为广泛的用户界面, 相比命令行而言,图形界面才是异端,世界上第一个程序员(女)就是通过命令行来变成的.</p>
+</blockquote>
+<hr>
+<h3 id="如何学习命令行"><a href="#如何学习命令行" class="headerlink" title="如何学习命令行?"></a>如何学习命令行?</h3><ol>
+<li>背单词(常用的命令行单词)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Directory</th>
+<th style="text-align:center">目录/文件夹</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">file</td>
+<td style="text-align:center">文件</td>
+</tr>
+<tr>
+<td style="text-align:center">make</td>
+<td style="text-align:center">新建</td>
+</tr>
+<tr>
+<td style="text-align:center">remove</td>
+<td style="text-align:center">删除</td>
+</tr>
+<tr>
+<td style="text-align:center">move</td>
+<td style="text-align:center">移动</td>
+</tr>
+<tr>
+<td style="text-align:center">copy</td>
+<td style="text-align:center">复制</td>
+</tr>
+<tr>
+<td style="text-align:center">list</td>
+<td style="text-align:center">罗列列表</td>
+</tr>
+<tr>
+<td style="text-align:center">link</td>
+<td style="text-align:center">链接</td>
+</tr>
+<tr>
+<td style="text-align:center">find</td>
+<td style="text-align:center">查找</td>
+</tr>
+<tr>
+<td style="text-align:center">echo</td>
+<td style="text-align:center">发出回音,重复</td>
+</tr>
+<tr>
+<td style="text-align:center">touch</td>
+<td style="text-align:center">触摸</td>
+</tr>
+<tr>
+<td style="text-align:center">change</td>
+<td style="text-align:center">改变</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ol>
+<li>缩写</li>
+</ol>
+<p><strong>缩写规则: 去掉元音字母(A E I O U), 保留2-3个辅音字母</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">全写</th>
+<th style="text-align:center">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">创建目录</td>
+<td style="text-align:center">make directory</td>
+<td style="text-align:center">mkdir</td>
+</tr>
+<tr>
+<td style="text-align:center">删除</td>
+<td style="text-align:center">remove</td>
+<td style="text-align:center">rm</td>
+</tr>
+<tr>
+<td style="text-align:center">移动/重命名</td>
+<td style="text-align:center">move</td>
+<td style="text-align:center">mv</td>
+</tr>
+<tr>
+<td style="text-align:center">复制</td>
+<td style="text-align:center">copy</td>
+<td style="text-align:center">cp</td>
+</tr>
+<tr>
+<td style="text-align:center">罗列</td>
+<td style="text-align:center">list</td>
+<td style="text-align:center">ls</td>
+</tr>
+<tr>
+<td style="text-align:center">改变目录</td>
+<td style="text-align:center">change directory</td>
+<td style="text-align:center">cd</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ol>
+<li>命令行符号</li>
+</ol>
+<ul>
+<li><code>~</code> : 用户目录</li>
+<li><code>/</code>  : 第一个<code>/</code>代码整个硬盘, 绝对路径</li>
+<li>以<code>/</code>开头的路径就是绝对路径</li>
+<li><code>.</code> : 当前目录</li>
+<li><code>..</code>  : 父级目录</li>
+<li><code>$</code>  : 提示你可以开始写命令了</li>
+</ul>
+<hr>
+<ol>
+<li>命令行实操</li>
+</ol>
+<ul>
+<li><code>cd ~/Desktop</code> 进入桌面</li>
+<li><code>mkdir demo-1</code> 创建目录demo-1</li>
+<li>rm -rf demo-1 删除目录demo-1</li>
+<li>touch 1.txt 创建一个名字为1的txt文件</li>
+<li>mv 1.txt 2.txt 将1.txt 移动到 2.txt, 也就是将1.txt重命名</li>
+</ul>
+<hr>
+<ol>
+<li>常见的自带命令</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作</th>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">进入目录</td>
+<td style="text-align:center">cd</td>
+<td style="text-align:center">记住一定要cd到你需要的目录里,不要总是在desktop上操作</td>
+</tr>
+<tr>
+<td style="text-align:center">显示当前目录</td>
+<td style="text-align:center">pwd</td>
+<td style="text-align:center">会显示当前目录的绝对路径(在Desktop输入显示: /Users/xxxx/Desktop)</td>
+</tr>
+<tr>
+<td style="text-align:center">创建目录</td>
+<td style="text-align:center">mkdir 目录名</td>
+<td style="text-align:center">mkdir demo-1</td>
+</tr>
+<tr>
+<td style="text-align:center">创建多级目录</td>
+<td style="text-align:center">mkdir -p 目录名/目录名/….</td>
+<td style="text-align:center">mkdir -p demo-1/demo-2/…</td>
+</tr>
+<tr>
+<td style="text-align:center">我是谁</td>
+<td style="text-align:center">whoami</td>
+<td style="text-align:center">查看当前电脑用户名</td>
+</tr>
+<tr>
+<td style="text-align:center">查看路径</td>
+<td style="text-align:center">ls 路径</td>
+<td style="text-align:center">cd到桌面也可以直接直接输入ls,就会在界面上看到桌面上</td>
+</tr>
+<tr>
+<td style="text-align:center">查看路径(包含隐藏文件)</td>
+<td style="text-align:center">ls -a</td>
+<td style="text-align:center">会显示一些隐藏文件(.git, .DS_Store等等)</td>
+</tr>
+<tr>
+<td style="text-align:center">查看路径(显示文件的一些信息)</td>
+<td style="text-align:center">ls -l</td>
+<td style="text-align:center">会显示文件的信息,有的看不懂,只能看懂文件的创建或者更新时间</td>
+</tr>
+<tr>
+<td style="text-align:center">查看路径(查看所有文件包含隐藏文件的信息)</td>
+<td style="text-align:center">ls -la</td>
+<td style="text-align:center">就是上面两个的结合</td>
+</tr>
+<tr>
+<td style="text-align:center">创建文件</td>
+<td style="text-align:center">echo ‘1’ &gt; 文件路径</td>
+<td style="text-align:center">echo ‘Hello’ &gt; 1.txt 创建一个1.txt的文件(如果文件不存在的话), 并将文本Hello写入到1.txt文件中</td>
+</tr>
+<tr>
+<td style="text-align:center">强制创建文件</td>
+<td style="text-align:center">echo ‘1’ &gt;! 文件路径</td>
+<td style="text-align:center">echo ‘World’ &gt;! 1.txt 强制创建一个1.txt的文本,如果之前存在1.txt文件,也会将其覆盖替换,此时文件内容显示World,不会显示Hello</td>
+</tr>
+<tr>
+<td style="text-align:center">追加文件内容</td>
+<td style="text-align:center">echo ‘World’ &gt;&gt; 文件路径</td>
+<td style="text-align:center">echo ‘Peace’ &gt;&gt; 1.txt 此时1.txt里会显示两个World Peace</td>
+</tr>
+<tr>
+<td style="text-align:center">创建文件</td>
+<td style="text-align:center">touch 文件名</td>
+<td style="text-align:center">也是创建文件,但是echo可以创建的同时并写入内容,而touch不可以</td>
+</tr>
+<tr>
+<td style="text-align:center">改变文件更新时间</td>
+<td style="text-align:center">touch 文件名</td>
+<td style="text-align:center">在touch一遍已存在的文件,就是更新文件时间</td>
+</tr>
+<tr>
+<td style="text-align:center">复制文件</td>
+<td style="text-align:center">cp 源路径 目标路径</td>
+<td style="text-align:center">cp 1.txt 2.txt 会复制一份2.txt, 1和2的内容一样</td>
+</tr>
+<tr>
+<td style="text-align:center">复制目录</td>
+<td style="text-align:center">cp -r 源路径 目标路径</td>
+<td style="text-align:center">-r r的意思就是递归,遍历源路径目录,依次cp,直达无内容为止</td>
+</tr>
+<tr>
+<td style="text-align:center">移动节点</td>
+<td style="text-align:center">mv 源路径 目标路径</td>
+<td style="text-align:center">mv 1.txt 2.txt 就是将1.txt里的内容覆盖到2.txt中,并将1.txt文件删除</td>
+</tr>
+<tr>
+<td style="text-align:center">删除文件</td>
+<td style="text-align:center">rm 文件路径</td>
+<td style="text-align:center">rm 1.txt, 删除会你是否删除yer/no</td>
+</tr>
+<tr>
+<td style="text-align:center">强制删除文件</td>
+<td style="text-align:center">rm -f 文件路径</td>
+<td style="text-align:center">rm -f 1.txt 直接删除了,不会询问你</td>
+</tr>
+<tr>
+<td style="text-align:center">删除目录</td>
+<td style="text-align:center">rm -r 目录路径</td>
+<td style="text-align:center">rm -r demo-1 删除目录文件,包括目录下的所有子目录以及文件, 会询问你是否删除</td>
+</tr>
+<tr>
+<td style="text-align:center">强制删除目录</td>
+<td style="text-align:center">rm -rf</td>
+<td style="text-align:center">rm -rf demo-1 删除目录文件,不会询问</td>
+</tr>
+<tr>
+<td style="text-align:center">查看目录结构</td>
+<td style="text-align:center">tree</td>
+<td style="text-align:center">就是结构</td>
+</tr>
+<tr>
+<td style="text-align:center">建立软链接</td>
+<td style="text-align:center">ln -s 真实文件 链接</td>
+<td style="text-align:center">ln -s 1.txt 1s.txt 创建替身(并不是快捷方式,虽然有个windows很熟悉的小箭头),一般npm安装一些东西的时候,都会创建软链接</td>
+</tr>
+<tr>
+<td style="text-align:center">下载文件</td>
+<td style="text-align:center">curl -L 网址 &gt; 文件路径</td>
+<td style="text-align:center">curl -L <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> &gt; baidu.html 就会将百度首页下载下来, 并保存为baidu.html, 但不会下载图片资源</td>
+</tr>
+<tr>
+<td style="text-align:center">拷贝网页</td>
+<td style="text-align:center">wget -p -H -e robots=off 网址</td>
+<td style="text-align:center">wget -p -H -e robots=off <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>    , 会下载百度首页的代码以及图片资源(用了这个命令,会感觉自己和黑客一样0.0)</td>
+</tr>
+<tr>
+<td style="text-align:center">查看磁盘占用</td>
+<td style="text-align:center">df -kh</td>
+<td style="text-align:center">磁盘使用情况</td>
+</tr>
+<tr>
+<td style="text-align:center">当前目录大小</td>
+<td style="text-align:center">du -sh</td>
+<td style="text-align:center">目录大小</td>
+</tr>
+<tr>
+<td style="text-align:center">各文件大小</td>
+<td style="text-align:center">du -h</td>
+<td style="text-align:center">会查看目录中所有文件的大小</td>
+</tr>
+<tr>
+<td style="text-align:center">查看文件内容</td>
+<td style="text-align:center">cat 1.txt</td>
+<td style="text-align:center">查看文件文本内容</td>
+</tr>
+<tr>
+<td style="text-align:center">查看域名拥有者</td>
+<td style="text-align:center">whois baidu.com</td>
+<td style="text-align:center">查看域名信息</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>搜索</li>
+</ol>
+<blockquote>
+<p>Google: Linux 你想要查找的命令  例如: Linux 查看文件内容</p>
+</blockquote>
+<ol>
+<li>常用查看命令网址</li>
+</ol>
+<ul>
+<li><a href="https://github.com/tldr-pages/tldr" target="_blank" rel="noopener">Too Long; Didn’t Read</a> 太长不要读</li>
+<li><a href="https://www.explainshell.com/" target="_blank" rel="noopener">explainshell</a> 命令行解释</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>一个程序员不会命令行是说不过去的,  比如Gulp, Webpack, SASS, Node.js, Vue, React, Angular开发的时候, 他们没有除了命令行以外的任何界面提供!</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/command-line/" rel="tag"># command-line</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/03/Bash脚本/" rel="next" title="Bash脚本">
+                <i class="fa fa-chevron-left"></i> Bash脚本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jiang Tao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行基础"><span class="nav-number">1.</span> <span class="nav-text">命令行基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行是什么"><span class="nav-number">1.1.</span> <span class="nav-text">命令行是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何学习命令行"><span class="nav-number">1.2.</span> <span class="nav-text">如何学习命令行?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">2.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiang Tao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
