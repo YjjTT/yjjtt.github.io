@@ -88,7 +88,7 @@
 <meta property="og:description" content="Array 写之前巩固一下JS的七种数据类型:number, string, boolean, null, undefined, symbol, object, 由此可见, Array属于object.   Array是JS的原生对象, 同时也是一个构造函数.  构造函数123var arr = new Array(2); // 生成一个两个成员的数组,每个位置都是空值//等同于var arr =">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/YjjTT/ImageFile/raw/master/img/Arraty.png">
-<meta property="og:updated_time" content="2019-02-25T09:38:02.154Z">
+<meta property="og:updated_time" content="2019-02-26T05:15:50.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript里的Array">
 <meta name="twitter:description" content="Array 写之前巩固一下JS的七种数据类型:number, string, boolean, null, undefined, symbol, object, 由此可见, Array属于object.   Array是JS的原生对象, 同时也是一个构造函数.  构造函数123var arr = new Array(2); // 生成一个两个成员的数组,每个位置都是空值//等同于var arr =">
@@ -320,6 +320,7 @@
 <li>所以遍历是是遍历, 和是不是数组无关, 有关的是有没有下标.</li>
 <li>数组之所以为数组, 是因为你觉得他是数组, 觉得是数组就使用<code>for(let i = 0;i&lt;obj.length;i++)</code>进行遍历, 觉得不是就使用<code>for(let key in obj)</code>遍历.</li>
 <li>数组本质: <strong><strong>proto</strong></strong>(原型)指向了<code>Array.prototype</code>.</li>
+<li>伪数组: 原型链中<strong><strong>proto</strong></strong>没有指向<code>Array.prototype</code>, 例如(obj, arguments)</li>
 </ol>
 <h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><p><code>Array.isArray</code> 方法返回一个bool值, 表示参数是否为数组.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> arr <span class="comment">// 'object'</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(arr) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
