@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="我的简历,">
+  <meta name="keywords" content="ES6, JS,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="我的简历">
-<meta name="keywords" content="我的简历">
+<meta name="description" content="ES6 精讲 ES5-&amp;gt;ES6 — JS打脸史 a = 1var a = 1// 上面两种是ES 3，下面两种是ES 6let a = 1const a = 1 a = 1含义不明, 不确定是全局变量还是局部变量 - 不要用 var a = 1 变量提升, 会出现问题 - 不要用 let a = 1 不会变量提升 const a = 1 只能赋值一次 Let:  Let的作用域在最近的{}之">
+<meta name="keywords" content="ES6, JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="resume">
-<meta property="og:url" content="http://yoursite.com/2019/02/22/resume/index.html">
+<meta property="og:title" content="ES6精讲">
+<meta property="og:url" content="http://yoursite.com/2019/06/15/ES6精讲/index.html">
 <meta property="og:site_name" content="YjjTT">
-<meta property="og:description" content="我的简历">
+<meta property="og:description" content="ES6 精讲 ES5-&amp;gt;ES6 — JS打脸史 a = 1var a = 1// 上面两种是ES 3，下面两种是ES 6let a = 1const a = 1 a = 1含义不明, 不确定是全局变量还是局部变量 - 不要用 var a = 1 变量提升, 会出现问题 - 不要用 let a = 1 不会变量提升 const a = 1 只能赋值一次 Let:  Let的作用域在最近的{}之">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-22T09:07:56.497Z">
+<meta property="og:updated_time" content="2019-06-15T06:52:01.019Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="resume">
-<meta name="twitter:description" content="我的简历">
+<meta name="twitter:title" content="ES6精讲">
+<meta name="twitter:description" content="ES6 精讲 ES5-&amp;gt;ES6 — JS打脸史 a = 1var a = 1// 上面两种是ES 3，下面两种是ES 6let a = 1const a = 1 a = 1含义不明, 不确定是全局变量还是局部变量 - 不要用 var a = 1 变量提升, 会出现问题 - 不要用 let a = 1 不会变量提升 const a = 1 只能赋值一次 Let:  Let的作用域在最近的{}之">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/22/resume/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/15/ES6精讲/">
 
 
 
 
 
-  <title>resume | YjjTT</title>
+  <title>ES6精讲 | YjjTT</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/resume/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/15/ES6精讲/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiang Tao">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">resume</h1>
+          <h1 class="post-title" itemprop="name headline">ES6精讲</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T17:07:06+08:00">
-                2019-02-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-15T14:51:08+08:00">
+                2019-06-15
               </time>
             
 
@@ -300,7 +300,38 @@
       
 
       
-        <p><a href="http://yjjtt.top/resume/index.html" target="_blank" rel="noopener">我的简历</a></p>
+        <p>ES6 精讲</p>
+<p>ES5-&gt;ES6 — JS打脸史</p>
+<p>a = 1<br>var a = 1<br>// 上面两种是ES 3，下面两种是ES 6<br>let a = 1<br>const a = 1</p>
+<p>a = 1含义不明, 不确定是全局变量还是局部变量 - 不要用</p>
+<p>var a = 1 变量提升, 会出现问题 - 不要用</p>
+<p>let a = 1 不会变量提升</p>
+<p>const a = 1 只能赋值一次</p>
+<p>Let:</p>
+<ol>
+<li>Let的作用域在最近的{}之间</li>
+<li>如果你在let a 之前使用a, 那么报错</li>
+<li>如果你重复let a , 那么报错</li>
+</ol>
+<p>Const:</p>
+<p>1.2.3 // 同上</p>
+<p>4.只有一次赋值机会, 而且必须在声明的时候立马赋值</p>
+<p>function fn(){<br>    if(true){<br>        console.log(a)<br>    }else{<br>        var a // 声明var a 不会报错, 不声明就报错, 无论支不执行,都会变量提升<br>        console.log(2)<br>    }<br>}<br>fn()</p>
+<p>解决js全局变量提升, 用函数包起来</p>
+<p>(function(){<br>   var a = 1<br>   window.xx = function (){<br>       console.log(a)<br>   }<br>}()) // 匿名函数立即执行</p>
+<p>{<br>    let a = 1<br>    console.log(a) // 1<br>    {<br>        console.log(a) // 报错, Temp Dead Zone<br>        let a = 2<br>        console.log(a)  // 2<br>        {<br>            let a = 3<br>            console.log(a) // 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>}<br>console.log(a) // 1</p>
+<p>{<br>    const a = 1<br>    console.log(a)<br>    a = 2 // 报错 const 常量只能赋值一次<br>    console.log(a)<br>}</p>
+<p>面试题:</p>
+<figure class="highlight plain"><figcaption><span>a </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">    console.log(a) // 1</span><br><span class="line">&#125;</span><br><span class="line">a = 2 ////// 这里有一行代码不给你看</span><br><span class="line">fn()</span><br><span class="line">// 能确定a 一定打印出1么？ 答案：不能 代码执行顺序</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>for (var i=0; i&lt;6; i++){</p>
+<p>}<br>console.log(i) // i = 6<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>var i<br>for(i=0; i&lt;6; i++){<br>    function fn(){<br>        console.log(i)<br>    }<br>    fn() // 会执行 fn 0,1,2,3,4,5<br>}</p>
+<p>var i<br>for(i=0; i&lt;6; i++){<br>    function fn(){<br>        console.log(i)<br>    }<br>    XXXXXXXX  // 会执行 fn<br>}<br>是否会打印0,1,2,3,4,5?<br>答案不一定, 写fn()时, 会打印0,1,2,3,4,5<br>当写成button.onclick = fn 打印出6 刻舟求剑<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>for (let i=0; i&lt;6; i++){<br>    // 块里面的i = 圆括号里面i的值<br>    let i = _i // JS自动加的, 正常里面是访问不到i的<br>    console.log(i)<br>    // 圆括号里面i的值 = 块里面的i<br>}</p>
+<p>以上一共有7个i, 圆括号里的一个i, 块级里面自动生成6个i<br><code>`</code></p>
 
       
     </div>
@@ -318,7 +349,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/我的简历/" rel="tag"># 我的简历</a>
+            <a href="/tags/ES6-JS/" rel="tag"># ES6, JS</a>
           
         </div>
       
@@ -331,8 +362,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/11/canvas/" rel="next" title="canvas">
-                <i class="fa fa-chevron-left"></i> canvas
+              <a href="/2019/04/04/问题整理/" rel="next" title="问题整理">
+                <i class="fa fa-chevron-left"></i> 问题整理
               </a>
             
           </div>
@@ -340,10 +371,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/25/JavaScript里的Array/" rel="prev" title="JavaScript里的Array">
-                JavaScript里的Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
