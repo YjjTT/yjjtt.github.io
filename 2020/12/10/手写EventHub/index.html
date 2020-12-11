@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="EventHub, 发布订阅模式, EventBus,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="手写EventHubEventHub 类12345678910111213141516171819202122232425262728293031323334353637383940class EventHub &amp;#123;  private cache: &amp;#123;[key: string]: Array&amp;lt;(data: unknown) =&amp;gt; void&amp;gt;&amp;#125; = &amp;#">
+<meta name="keywords" content="EventHub, 发布订阅模式, EventBus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="手写EventHub">
 <meta property="og:url" content="http://yoursite.com/2020/12/10/手写EventHub/index.html">
 <meta property="og:site_name" content="TAO">
+<meta property="og:description" content="手写EventHubEventHub 类12345678910111213141516171819202122232425262728293031323334353637383940class EventHub &amp;#123;  private cache: &amp;#123;[key: string]: Array&amp;lt;(data: unknown) =&amp;gt; void&amp;gt;&amp;#125; = &amp;#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-10T09:33:50.823Z">
+<meta property="og:updated_time" content="2020-12-11T02:42:50.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手写EventHub">
+<meta name="twitter:description" content="手写EventHubEventHub 类12345678910111213141516171819202122232425262728293031323334353637383940class EventHub &amp;#123;  private cache: &amp;#123;[key: string]: Array&amp;lt;(data: unknown) =&amp;gt; void&amp;gt;&amp;#125; = &amp;#">
 
 
 
@@ -296,7 +300,30 @@
       
 
       
-        
+        <h2 id="手写EventHub"><a href="#手写EventHub" class="headerlink" title="手写EventHub"></a>手写EventHub</h2><h3 id="EventHub-类"><a href="#EventHub-类" class="headerlink" title="EventHub 类"></a>EventHub 类</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> EventHub &#123;</span><br><span class="line">  <span class="keyword">private</span> cache: &#123;[key: <span class="built_in">string</span>]: <span class="built_in">Array</span>&lt;<span class="function">(<span class="params">data: unknown</span>) =&gt;</span> <span class="built_in">void</span>&gt;&#125; = &#123;&#125; <span class="comment">// 存储事件名(eventName)和事件回调(fn)</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 订阅 存储事件回调fn</span></span><br><span class="line">  on(eventName: <span class="built_in">string</span>, fn: <span class="function">(<span class="params">data; unknown</span>) =&gt;</span> <span class="built_in">void</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.cache[eventName] = <span class="keyword">this</span>.cache[eventName] || [] <span class="comment">// 初始化</span></span><br><span class="line">    <span class="keyword">this</span>.cache[eventName].push(fn)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 发布 调用eventName对应的所有的fn</span></span><br><span class="line">  emit(eventName: <span class="built_in">string</span>, data?: unknown) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.cache[eventName] === <span class="literal">undefined</span>) <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">this</span>.cache[eventName].forEach(<span class="function">(<span class="params">fn</span>) =&gt;</span> fn(data))</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 取消订阅 将fn从this.cache[eventName] 数组中删除</span></span><br><span class="line">  off(eventName: <span class="built_in">string</span>, fn: <span class="function">(<span class="params">data:unknown</span>) =&gt;</span> <span class="built_in">void</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> index = indexOf(<span class="keyword">this</span>.cache[eventName], fn)</span><br><span class="line">    <span class="keyword">if</span> (index === <span class="number">-1</span>) <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">this</span>.cache[eventName].splice(index, <span class="number">1</span>)</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> EventHub</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param array 帮组函数 helper indexOf</span></span><br><span class="line"><span class="comment"> * @param item</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">indexOf</span>(<span class="params">array, item</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (array === <span class="literal">undefined</span>) <span class="keyword">return</span> <span class="number">-1</span> <span class="comment">// off就不需要初始化了 this.cache[eventName] = this.cache[eventName] || []</span></span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">-1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array[i] === item) &#123;</span><br><span class="line">            index = i</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> index</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试驱动开发-TDD"><a href="#测试驱动开发-TDD" class="headerlink" title="测试驱动开发(TDD)"></a>测试驱动开发(TDD)</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> EventHub <span class="keyword">from</span> <span class="string">'../eventHub.ts'</span>;</span><br><span class="line"><span class="keyword">type</span> TestCase = <span class="function">(<span class="params">message: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>测试一</li>
+</ul>
+<blockquote>
+<p>  Assert eventHub可以创建对象</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test1: TestCase = <span class="function"><span class="params">message</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> eventHub = <span class="keyword">new</span> EventHub()</span><br><span class="line">  <span class="built_in">console</span>.assert(eventHub <span class="keyword">instanceof</span> <span class="built_in">Object</span> === <span class="literal">true</span>, <span class="string">'eventHub 是个对象'</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(message)</span><br><span class="line">&#125;</span><br><span class="line">test1(<span class="string">'eventHub 可以创建对象'</span>) <span class="comment">// 执行</span></span><br><span class="line"><span class="comment">// 执行结果</span></span><br><span class="line"><span class="comment">// 无报错</span></span><br><span class="line"><span class="comment">// 输出 'eventHub 可以创建对象'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>测试二</li>
+</ul>
+<blockquote>
+<p>  订阅了(.on)之后, 发布(.emit)会触发订阅(.on)的函数</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test2: TestCase = <span class="function"><span class="params">message</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> eventHub = <span class="keyword">new</span> EventHub()</span><br><span class="line">  <span class="keyword">let</span> called = <span class="literal">false</span></span><br><span class="line">  <span class="comment">// 订阅 事件名xxx fn=&gt; assert</span></span><br><span class="line">  eventHub.on(<span class="string">'xxx'</span>, <span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">    called = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">console</span>.assert(data === <span class="string">'Hello EventHub'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 发布</span></span><br><span class="line">  eventHub.emit(<span class="string">'xxx'</span>, <span class="string">'Hello EventHub'</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 确保函数执行</span></span><br><span class="line">  <span class="built_in">console</span>.assert(called === <span class="literal">true</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(message)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test2(<span class="string">'.on 了之后 .emit 会触发 .on 的函数'</span>) <span class="comment">// 执行</span></span><br><span class="line"><span class="comment">// 执行结果</span></span><br><span class="line"><span class="comment">// 无报错</span></span><br><span class="line"><span class="comment">// 输出 '.on 了之后 .emit 会触发 .on 的函数'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>测试三</li>
+</ul>
+<blockquote>
+<p>  assert 取消订阅(.off)有用</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test3: TestCase = <span class="function"><span class="params">message</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> eventHub = <span class="keyword">new</span> EventHub()</span><br><span class="line">  <span class="keyword">let</span> called = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">const</span> fn1 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    called = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"> 	<span class="comment">// 订阅</span></span><br><span class="line">  eventHub.on(<span class="string">'yyy'</span>, fn1)</span><br><span class="line">  <span class="comment">// 订阅之后立即取消订阅</span></span><br><span class="line">  eventHub.off(<span class="string">'yyy'</span>, fn1)</span><br><span class="line">  <span class="comment">// 取消之后在发布</span></span><br><span class="line">  eventHub.emit(<span class="string">'yyy'</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// assert</span></span><br><span class="line">  <span class="built_in">console</span>.assert(called === <span class="literal">false</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(meessage)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test3(<span class="string">'.off有用'</span>) <span class="comment">// 执行</span></span><br><span class="line"><span class="comment">// 执行结果</span></span><br><span class="line"><span class="comment">// 无报错 fn1已被删除</span></span><br><span class="line"><span class="comment">// 输出 '.off有用'</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -310,6 +337,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/EventHub-发布订阅模式-EventBus/" rel="tag"># EventHub, 发布订阅模式, EventBus</a>
+          
+        </div>
       
 
       
@@ -380,8 +413,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -411,7 +453,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -436,6 +478,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#手写EventHub"><span class="nav-number">1.</span> <span class="nav-text">手写EventHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EventHub-类"><span class="nav-number">1.1.</span> <span class="nav-text">EventHub 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试驱动开发-TDD"><span class="nav-number">1.2.</span> <span class="nav-text">测试驱动开发(TDD)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
